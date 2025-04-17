@@ -1,5 +1,5 @@
 
-import { Monitor, Smartphone, Tv, Cast, QrCode, Calendar, Info, BarChart4 } from "lucide-react";
+import { Monitor, Smartphone, Tv, Cast, QrCode, Info, BarChart4 } from "lucide-react";
 
 const FeatureCard = ({ 
   icon: Icon, 
@@ -52,16 +52,6 @@ const FeaturesSection = () => {
       icon: Info,
       title: "Publicidad directa del Hotel",
       description: "Permite al hotel promocionar sus servicios, ofertas especiales y paquetes exclusivos directamente a los huéspedes."
-    },
-    {
-      icon: Calendar,
-      title: "Información de Eventos",
-      description: "Mantén a los huéspedes informados sobre eventos y actividades dentro del hotel o en la zona, asegurando una experiencia completa."
-    },
-    {
-      icon: Tv,
-      title: "Pantallas de Publicidad en Diversos Puntos",
-      description: "Pantallas en áreas estratégicas del hotel para promover eventos, servicios o publicidad personalizada, asegurando que la información llegue a la audiencia adecuada."
     }
   ];
 
@@ -75,7 +65,7 @@ const FeaturesSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <FeatureCard 
               key={index}

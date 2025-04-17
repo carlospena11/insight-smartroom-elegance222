@@ -8,7 +8,7 @@ import InterfaceShowcaseSection from "@/components/InterfaceShowcaseSection";
 import ScreenFormatsSection from "@/components/ScreenFormatsSection";
 import AboutUsSection from "@/components/AboutUsSection";
 import ContactSection from "@/components/ContactSection";
-import PartnersSection from "@/components/PartnersSection";
+import AIAgentsSection from "@/components/AIAgentsSection";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -40,7 +40,7 @@ const Index = () => {
       <LoadingScreen />
       <Navbar />
       <HeroSection />
-      <PartnersSection />
+      <AIAgentsSection />
       <FeaturesSection />
       <GuestExperienceSection />
       <InterfaceShowcaseSection />
