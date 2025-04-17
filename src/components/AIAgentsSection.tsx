@@ -1,25 +1,74 @@
 
 import { MessageSquare, Hotel, Bot, Brain, Zap, Code, Lightbulb, Languages } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const AIAgentsSection = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Valores de transformación para efectos de parallax
+  const titleY = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.98]);
+
   return (
-    <section className="py-20 bg-gray-100 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-100 to-white overflow-hidden relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div 
+          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        <motion.div 
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-insight-red/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.2, 0.4]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+      </div>
+      
+      <motion.div 
+        className="container mx-auto px-4"
+        style={{ opacity, scale }}
+      >
+        <div className="text-center mb-14 relative">
           <motion.h2 
-            className="text-3xl font-bold text-insight-dark mb-4"
+            className="text-3xl md:text-4xl font-bold text-insight-dark mb-6"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
+            style={{ y: titleY }}
           >
             Agentes de Inteligencia Artificial
           </motion.h2>
+          <motion.div
+            className="w-20 h-1 bg-insight-green mx-auto mb-6"
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          />
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             Nuestros agentes de IA revolucionan la experiencia del huésped, brindando atención personalizada las 24 horas.
           </motion.p>
@@ -48,21 +97,28 @@ const AIAgentsSection = () => {
               className="backdrop-blur-sm bg-white/80 rounded-xl p-8 shadow-lg border border-gray-200/50"
               whileHover={{ 
                 scale: 1.05, 
-                boxShadow: "0 20px 30px rgba(0,0,0,0.1)",
-                background: "rgba(255, 255, 255, 0.95)"
+                boxShadow: "0 20px 30px rgba(0,0,0,0.15)",
+                background: "rgba(255, 255, 255, 0.95)",
+                borderColor: "rgba(140, 209, 79, 0.4)"
               }}
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileTap={{ scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
                 duration: 0.7, 
                 delay: index * 0.3,
                 type: "spring",
-                stiffness: 100
+                stiffness: 80
               }}
             >
               <motion.div 
                 className="w-16 h-16 bg-insight-green/20 rounded-full flex items-center justify-center mb-5"
-                whileHover={{ scale: 1.2, rotate: 5, backgroundColor: "rgba(140, 209, 79, 0.4)" }}
+                whileHover={{ 
+                  scale: 1.2, 
+                  rotate: 5, 
+                  backgroundColor: "rgba(140, 209, 79, 0.4)",
+                  boxShadow: "0 0 12px rgba(140, 209, 79, 0.6)"
+                }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <agent.icon className="w-8 h-8 text-insight-green" />
@@ -75,7 +131,7 @@ const AIAgentsSection = () => {
         
         <motion.div 
           className="mt-20 backdrop-blur-md bg-white/60 rounded-xl shadow-xl overflow-hidden border border-gray-200/50"
-          whileHover={{ scale: 1.03, boxShadow: "0 25px 35px rgba(0,0,0,0.1)" }}
+          whileHover={{ scale: 1.03, boxShadow: "0 25px 35px rgba(0,0,0,0.15)" }}
           initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9, type: "spring" }}
@@ -103,7 +159,11 @@ const AIAgentsSection = () => {
                 <motion.a 
                   href="/ai-agents" 
                   className="inline-flex items-center px-6 py-3 bg-insight-green text-white font-semibold rounded-md shadow-md hover:shadow-lg transition-all"
-                  whileHover={{ scale: 1.08, boxShadow: "0 10px 25px rgba(140, 209, 79, 0.5)" }}
+                  whileHover={{ 
+                    scale: 1.08, 
+                    boxShadow: "0 10px 25px rgba(140, 209, 79, 0.5)",
+                    textShadow: "0 0 5px rgba(255,255,255,0.7)"
+                  }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -154,7 +214,7 @@ const AIAgentsSection = () => {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
