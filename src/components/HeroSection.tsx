@@ -1,58 +1,243 @@
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Zap, Star } from "lucide-react";
+import { useRef } from "react";
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Transform values for parallax effect
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.5]);
+
+  // Staggered animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 50,
+        duration: 0.6
+      }
+    }
+  };
+
+  const buttonVariants = {
+    rest: { scale: 1 },
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(140, 209, 79, 0.3)",
+      transition: { 
+        type: "spring", 
+        stiffness: 400, 
+        damping: 10 
+      }
+    },
+    tap: { scale: 0.95 }
+  };
+
   return (
-    <section id="inicio" className="relative min-h-screen bg-gradient-to-b from-gray-100 to-white flex items-center">
+    <section 
+      id="inicio" 
+      ref={sectionRef} 
+      className="relative min-h-screen bg-gradient-to-b from-gray-100 to-white flex items-center overflow-hidden"
+    >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"></div>
-        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-insight-red/5 rounded-full blur-3xl"></div>
+        <motion.div 
+          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        <motion.div 
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-insight-red/5 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.2, 0.4]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        
+        {/* Floating elements in background */}
+        <motion.div
+          className="absolute top-[20%] left-[15%] w-8 h-8 bg-insight-green/10 rounded-full"
+          animate={{
+            y: [0, -15, 0],
+            opacity: [0.5, 0.8, 0.5]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-[25%] right-[10%] w-6 h-6 bg-insight-red/10 rounded-full"
+          animate={{
+            y: [0, 20, 0],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
       </div>
       
       <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div 
             className="md:w-1/2 mb-10 md:mb-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            style={{ y: textY, opacity }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-insight-dark mb-4">
-              Soluciones <span className="text-insight-green">SmartRoom</span> para hoteles
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <motion.h1 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-insight-dark mb-4"
+              variants={itemVariants}
+            >
+              Soluciones <span className="text-insight-green relative">
+                SmartRoom
+                <motion.span 
+                  className="absolute -top-6 -right-8 text-yellow-400"
+                  animate={{ 
+                    rotate: [0, 15, 0],
+                    scale: [1, 1.2, 1]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                >
+                  <Star className="w-6 h-6 fill-current" />
+                </motion.span>
+              </span> para hoteles
+            </motion.h1>
+            
+            <motion.p 
+              className="text-lg md:text-xl text-gray-600 mb-8"
+              variants={itemVariants}
+            >
               Transformamos la experiencia del huésped con tecnología inteligente y personalizada para el sector Hospitality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              variants={itemVariants}
+            >
+              <motion.a 
                 href="#servicios" 
-                className="px-6 py-3 bg-insight-green text-white font-semibold rounded-md hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md"
+                className="group px-6 py-3 bg-insight-green text-white font-semibold rounded-md transition-all shadow-md relative overflow-hidden"
+                variants={buttonVariants}
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
               >
-                Nuestros Servicios
-              </a>
-              <a 
+                <span className="relative z-10 flex items-center justify-center">
+                  Nuestros Servicios
+                  <motion.span 
+                    className="ml-2"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.span>
+                </span>
+                <motion.span 
+                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.7 }}
+                />
+              </motion.a>
+              
+              <motion.a 
                 href="#contacto" 
-                className="px-6 py-3 bg-white text-insight-dark font-semibold rounded-md border border-insight-dark hover:bg-insight-dark hover:text-white transition-all transform hover:scale-105 shadow-sm"
+                className="px-6 py-3 bg-white text-insight-dark font-semibold rounded-md border border-insight-dark hover:bg-insight-dark hover:text-white transition-all flex items-center justify-center"
+                variants={buttonVariants}
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
               >
-                Contactar
-              </a>
-            </div>
+                <Zap className="w-5 h-5 mr-2" /> Contactar
+              </motion.a>
+            </motion.div>
           </motion.div>
           
           <motion.div 
             className="md:w-1/2"
-            initial={{ opacity: 0, x: 20 }}
+            style={{ y: imageY }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
           >
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <img 
                 src="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" 
                 alt="Insight SmartRoom Interface" 
                 className="rounded-lg shadow-2xl mx-auto"
               />
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/10 to-transparent"></div>
-            </div>
+              <motion.div 
+                className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-60"
+                animate={{ opacity: [0.6, 0.4, 0.6] }}
+                transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+              />
+              
+              <motion.div 
+                className="absolute -right-4 -bottom-4 bg-white p-3 rounded-lg shadow-lg flex items-center"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
+              >
+                <motion.div 
+                  className="text-insight-dark font-semibold flex items-center"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <span className="text-insight-green mr-2">+</span> Interfaz Intuitiva
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
