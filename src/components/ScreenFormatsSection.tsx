@@ -1,11 +1,11 @@
 
 const ScreenFormatsSection = () => {
   return (
-    <section id="formatos" className="py-20 bg-insight-dark text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Formatos adaptados a las necesidades del hotel</h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+    <section id="formatos" className="py-12 bg-insight-dark text-white">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold mb-3">Formatos adaptados a las necesidades del hotel</h2>
+          <p className="text-base text-gray-300 max-w-2xl mx-auto">
             Nuestro sistema se adapta a cualquier tipo de pantalla y formato, brindando una experiencia consistente en todos los dispositivos.
           </p>
         </div>
@@ -26,25 +26,25 @@ const ScreenFormatsSection = () => {
           </div>
         </div>
         
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors">
-            <h3 className="text-xl font-semibold mb-4">Diseño Responsivo</h3>
-            <p className="text-gray-300">
-              Nuestras interfaces se adaptan automáticamente a cualquier tamaño de pantalla, desde pequeños monitores hasta grandes pantallas de hotel.
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors">
+            <h3 className="text-lg font-semibold mb-2">Diseño Responsivo</h3>
+            <p className="text-gray-300 text-sm">
+              Nuestras interfaces se adaptan automáticamente a cualquier tamaño de pantalla.
             </p>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors">
-            <h3 className="text-xl font-semibold mb-4">Múltiples Layouts</h3>
-            <p className="text-gray-300">
-              Ofrecemos diferentes layouts que se pueden personalizar según las necesidades específicas de cada hotel y tipo de habitación.
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors">
+            <h3 className="text-lg font-semibold mb-2">Múltiples Layouts</h3>
+            <p className="text-gray-300 text-sm">
+              Ofrecemos diferentes layouts que se pueden personalizar según las necesidades específicas de cada hotel.
             </p>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors">
-            <h3 className="text-xl font-semibold mb-4">Personalización Total</h3>
-            <p className="text-gray-300">
-              Cada elemento de la interfaz puede ser personalizado para reflejar la imagen de marca y el estilo visual del hotel.
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors">
+            <h3 className="text-lg font-semibold mb-2">Personalización Total</h3>
+            <p className="text-gray-300 text-sm">
+              Cada elemento de la interfaz puede ser personalizado para reflejar la imagen de marca del hotel.
             </p>
           </div>
         </div>
