@@ -1,4 +1,3 @@
-
 import { MessageSquare, Hotel, Bot, Brain, Zap, Code, Lightbulb, Languages } from "lucide-react";
 import { motion } from "framer-motion";
 
