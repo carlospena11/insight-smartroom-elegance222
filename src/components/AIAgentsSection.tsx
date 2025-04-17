@@ -1,3 +1,4 @@
+
 import { MessageSquare, Hotel, Bot, Brain, Zap, Code, Lightbulb, Languages } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -230,10 +231,11 @@ const AIAgentsSection = () => {
                     duration: 4,
                     ease: "easeInOut"
                   }}
-              />
-            </motion.div>
-          </div>
-        </motion.div>
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
