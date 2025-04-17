@@ -1,7 +1,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Smartphone, Tablet, Check } from "lucide-react";
+import { Layout, Grid, Columns, LayoutGrid } from "lucide-react";
 
 const ScreenFormatsSection = () => {
   const sectionRef = useRef(null);
@@ -35,10 +35,34 @@ const ScreenFormatsSection = () => {
     }
   };
 
-  const deviceTypes = [
-    { icon: Monitor, name: "Escritorio", features: ["Resolución óptima", "Navegación completa", "Experiencia inmersiva"] },
-    { icon: Tablet, name: "Tablet", features: ["Adaptado a pantallas medianas", "Gestos táctiles", "Orientación dinámica"] },
-    { icon: Smartphone, name: "Móvil", features: ["Interfaz simplificada", "Accesibilidad máxima", "Vista compacta"] }
+  const layoutTypes = [
+    { 
+      icon: Layout, 
+      name: "Clásico", 
+      features: [
+        "Distribución tradicional de elementos",
+        "Acceso rápido a funciones principales",
+        "Navegación intuitiva"
+      ] 
+    },
+    { 
+      icon: Grid, 
+      name: "Cuadrícula", 
+      features: [
+        "Vista de todos los servicios",
+        "Organización por categorías",
+        "Acceso directo a funciones"
+      ] 
+    },
+    { 
+      icon: LayoutGrid, 
+      name: "Modular", 
+      features: [
+        "Widgets personalizables",
+        "Contenido dinámico",
+        "Información en tiempo real"
+      ] 
+    }
   ];
 
   return (
@@ -62,12 +86,12 @@ const ScreenFormatsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            ADAPTABILIDAD COMPLETA
+            DISPOSICIÓN INTELIGENTE
           </motion.span>
-          <h2 className="text-3xl font-bold mb-4">Formatos adaptados a las necesidades del hotel</h2>
+          <h2 className="text-3xl font-bold mb-4">Formatos de launcher adaptados a cada hotel</h2>
           <div className="w-20 h-1 bg-insight-green mx-auto mb-6"></div>
           <p className="text-base text-gray-300 max-w-2xl mx-auto">
-            Nuestro sistema se adapta a cualquier tipo de pantalla y formato, brindando una experiencia consistente en todos los dispositivos.
+            Diferentes layouts que organizan de manera óptima los servicios e información en la pantalla del televisor
           </p>
         </motion.div>
         
@@ -83,7 +107,7 @@ const ScreenFormatsSection = () => {
           >
             <motion.img 
               src="/lovable-uploads/8267491d-9223-4994-8a4b-68fe754c774d.png" 
-              alt="Diferentes formatos de pantalla del sistema Hospitality" 
+              alt="Diferentes layouts del sistema Hospitality" 
               className="w-full rounded-xl shadow-2xl"
               whileHover={{ filter: "brightness(1.1)" }}
             />
@@ -100,7 +124,7 @@ const ScreenFormatsSection = () => {
                 boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
               }}
             >
-              Interfaces personalizables
+              Layouts personalizables
             </motion.div>
             
             <motion.div 
@@ -115,7 +139,7 @@ const ScreenFormatsSection = () => {
                 boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
               }}
             >
-              Compatibilidad multi-dispositivo
+              Organización inteligente
             </motion.div>
           </motion.div>
           
@@ -129,18 +153,18 @@ const ScreenFormatsSection = () => {
               className="text-2xl font-bold mb-6"
               variants={fadeIn}
             >
-              Una experiencia perfecta en cada pantalla
+              Disposición óptima en pantalla
             </motion.h3>
             
             <motion.p 
               className="text-gray-300 mb-8"
               variants={fadeIn}
             >
-              Con nuestra tecnología adaptativa, el sistema Hospitality ofrece una experiencia de usuario perfecta, independientemente del dispositivo que se utilice para acceder.
+              Nuestro sistema ofrece diferentes layouts que organizan de manera eficiente todos los servicios e información en la pantalla del televisor, asegurando una experiencia fluida y accesible para los huéspedes.
             </motion.p>
             
             <div className="space-y-6">
-              {deviceTypes.map((device, index) => (
+              {layoutTypes.map((layout, index) => (
                 <motion.div 
                   key={index}
                   className="flex items-center gap-4 bg-white/10 rounded-lg p-4 backdrop-blur-sm"
@@ -160,20 +184,20 @@ const ScreenFormatsSection = () => {
                       transition: { duration: 0.8, ease: "easeInOut" }
                     }}
                   >
-                    <device.icon className="w-6 h-6 text-insight-green" />
+                    <layout.icon className="w-6 h-6 text-insight-green" />
                   </motion.div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Formato {device.name}</h4>
+                    <h4 className="font-semibold text-white mb-1">Layout {layout.name}</h4>
                     <ul className="space-y-1">
-                      {device.features.map((feature, idx) => (
+                      {layout.features.map((feature, idx) => (
                         <motion.li 
                           key={idx} 
-                          className="text-sm text-gray-300 flex items-center"
+                          className="text-sm text-gray-300 flex items-center gap-2"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.3 + (index * 0.1) + (idx * 0.1) }}
                         >
-                          <Check className="w-4 h-4 mr-2 text-insight-green flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0" />
                           {feature}
                         </motion.li>
                       ))}
@@ -194,16 +218,16 @@ const ScreenFormatsSection = () => {
         >
           {[
             {
-              title: "Diseño Responsivo",
-              description: "Nuestras interfaces se adaptan automáticamente a cualquier tamaño de pantalla, garantizando una visualización óptima."
+              title: "Widgets Dinámicos",
+              description: "Módulos que muestran información en tiempo real como el clima, vuelos y eventos locales."
             },
             {
-              title: "Múltiples Layouts",
-              description: "Ofrecemos diferentes layouts que se pueden personalizar según las necesidades específicas de cada hotel y tipo de habitación."
+              title: "Layouts Flexibles",
+              description: "Diferentes disposiciones que se adaptan al contenido y servicios específicos de cada hotel."
             },
             {
               title: "Personalización Total",
-              description: "Cada elemento de la interfaz puede ser personalizado para reflejar la imagen de marca del hotel y crear una experiencia única."
+              description: "Cada elemento de la interfaz puede ser personalizado y ubicado según las preferencias del hotel."
             }
           ].map((feature, index) => (
             <motion.div 
@@ -259,3 +283,4 @@ const ScreenFormatsSection = () => {
 };
 
 export default ScreenFormatsSection;
+
