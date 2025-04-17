@@ -1,4 +1,3 @@
-
 import { MessageSquare, Hotel, Bot, Languages } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -36,7 +35,7 @@ const AIAgentsSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#FDE1D3] overflow-hidden relative">
+    <section ref={sectionRef} className="py-20 bg-[#F5F5DC] overflow-hidden relative">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
           className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"
