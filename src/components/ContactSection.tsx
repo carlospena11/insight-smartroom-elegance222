@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -20,24 +19,21 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí se añadiría la lógica para enviar el formulario
     console.log("Formulario enviado:", formState);
     
-    // Resetear formulario después de enviar
     setFormState({
       name: "",
       email: "",
       message: ""
     });
     
-    // Muestra mensaje de éxito (se podría implementar un toast)
     alert("¡Mensaje enviado con éxito!");
   };
 
   return (
     <motion.section 
       id="contacto" 
-      className="py-16 bg-gray-50"
+      className="py-16 bg-[#F5F5DC]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}

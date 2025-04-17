@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Award, Users, Lightbulb } from "lucide-react";
@@ -56,7 +55,7 @@ const AboutUsSection = () => {
   return (
     <motion.section 
       id="nosotros" 
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-20 bg-[#F5F5DC] relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

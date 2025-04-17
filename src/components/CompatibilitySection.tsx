@@ -1,4 +1,3 @@
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -16,7 +15,7 @@ const CompatibilitySection = () => {
   };
 
   return (
-    <section id="compatibilidad" className="py-20 bg-white" ref={sectionRef}>
+    <section id="compatibilidad" className="py-20 bg-[#F5F5DC]" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"

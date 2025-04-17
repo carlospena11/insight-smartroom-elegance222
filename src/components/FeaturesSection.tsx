@@ -65,7 +65,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="caracteristicas" className="py-20 bg-gray-50">
+    <section id="caracteristicas" className="py-20 bg-[#F5F5DC]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-insight-dark mb-4">Principales Características del Sistema</h2>

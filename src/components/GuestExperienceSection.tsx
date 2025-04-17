@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const FeaturePoint = ({ title, description }: { title: string; description: string }) => {
@@ -43,7 +42,7 @@ const GuestExperienceSection = () => {
   return (
     <motion.section 
       id="experiencia" 
-      className="py-20 relative bg-white overflow-hidden"
+      className="py-20 relative bg-[#F5F5DC] overflow-hidden"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
