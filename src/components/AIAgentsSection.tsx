@@ -1,3 +1,4 @@
+
 import { MessageSquare, Hotel, Bot, Brain, Zap, Code, Lightbulb, Languages } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -84,7 +85,7 @@ const AIAgentsSection = () => {
                   Nuestros agentes aprenden las preferencias de cada huésped para ofrecer recomendaciones personalizadas. Además, reducen la carga de trabajo del personal, permitiéndoles enfocarse en interacciones de alto valor.
                 </p>
                 <motion.a 
-                  href="#contacto" 
+                  href="/ai-agents" 
                   className="inline-flex items-center px-6 py-3 bg-insight-green text-white font-semibold rounded-md shadow-md hover:shadow-lg transition-all"
                   whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(140, 209, 79, 0.4)" }}
                   whileTap={{ scale: 0.95 }}
