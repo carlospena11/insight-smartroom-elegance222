@@ -137,7 +137,6 @@ const AIAgentsSection = () => {
                 alt="Agente de IA Insight" 
                 className="w-full max-w-md rounded-lg shadow-lg relative z-10"
                 whileHover={{ scale: 1.08, rotate: 2 }}
-                transition={{ duration: 0.5 }}
                 animate={{ 
                   y: [0, -8, 0],
                   boxShadow: [
