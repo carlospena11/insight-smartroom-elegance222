@@ -1,5 +1,5 @@
-
 import { Monitor, Smartphone, Tv, Cast, QrCode, Info, BarChart4 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FeatureCard = ({ 
   icon: Icon, 
@@ -11,13 +11,22 @@ const FeatureCard = ({
   description: string 
 }) => {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+    <motion.div 
+      className="bg-white rounded-lg p-6 shadow-lg border border-gray-100 transition-all duration-300"
+      whileHover={{ 
+        scale: 1.05, 
+        boxShadow: "0 10px 20px rgba(0,0,0,0.1)"
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="w-12 h-12 bg-insight-green/10 rounded-full flex items-center justify-center mb-4">
         <Icon className="w-6 h-6 text-insight-green" />
       </div>
       <h3 className="text-xl font-semibold text-insight-dark mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
-    </div>
+    </motion.div>
   );
 };
 

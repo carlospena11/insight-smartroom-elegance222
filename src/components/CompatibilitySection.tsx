@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 const CompatibilitySection = () => {
   return (
@@ -11,7 +12,12 @@ const CompatibilitySection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="md:w-1/2">
+          <motion.div 
+            className="md:w-1/2 prose max-w-none"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="prose max-w-none">
               <p className="text-gray-700 mb-6">
                 El sistema Hospitality de NeuraTech está diseñado para integrarse perfectamente con televisores mediante la instalación de un dispositivo compatible con Android TV 14 o superior. Este dispositivo transforma cualquier televisor en un Smart TV completamente funcional, ofreciendo todas las características modernas que los huéspedes esperan, pero con un enfoque 100% personalizado y adaptado a las necesidades del hotel.
@@ -47,9 +53,13 @@ const CompatibilitySection = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="md:w-1/2">
+          <motion.div 
+            className="md:w-1/2"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="relative border border-gray-200 rounded-xl p-6 bg-gray-50 shadow-md">
               <img 
                 src="/lovable-uploads/27a90f52-eb00-4ffd-baf1-e4fe55ae9d2a.png" 
@@ -70,7 +80,7 @@ const CompatibilitySection = () => {
                 <img src="/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png" alt="Sony" className="h-10 object-contain" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
