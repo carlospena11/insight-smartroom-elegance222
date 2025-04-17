@@ -1,4 +1,3 @@
-
 import { MessageSquare, Hotel, Bot, Brain, Zap, Code, Lightbulb, Languages } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -75,76 +74,78 @@ const AIAgentsSection = () => {
               </motion.p>
             </div>
             
-            <motion.div
-              className="w-full md:max-w-lg mx-auto mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <motion.img
-                src="/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png"
-                alt="Agente de IA"
-                className="rounded-2xl shadow-xl w-full"
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
-              />
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-              {[
-                {
-                  icon: Bot,
-                  title: "Recepcionistas Virtuales",
-                  description: "Nuestros agentes de IA actúan como recepcionistas virtuales disponibles en todo momento, eliminando tiempos de espera y mejorando la satisfacción del huésped."
-                },
-                {
-                  icon: Languages,
-                  title: "Lenguaje Natural",
-                  description: "Interacción mediante lenguaje natural que hace que la comunicación sea fluida e intuitiva. Los huéspedes pueden hacer preguntas como lo harían con un miembro del personal."
-                },
-                {
-                  icon: Hotel,
-                  title: "Información Detallada",
-                  description: "Acceso inmediato a información completa sobre el hotel: menús de restaurantes, servicio a la habitación, atracciones cercanas y servicios del hotel."
-                }
-              ].map((agent, index) => (
-                <motion.div 
-                  key={index}
-                  className="backdrop-blur-sm bg-white/80 rounded-xl p-8 shadow-lg border border-gray-200/50"
-                  whileHover={{ 
-                    scale: 1.05, 
-                    boxShadow: "0 20px 30px rgba(0,0,0,0.15)",
-                    background: "rgba(255, 255, 255, 0.95)",
-                    borderColor: "rgba(140, 209, 79, 0.4)"
-                  }}
-                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                  whileTap={{ scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ 
-                    duration: 0.7, 
-                    delay: index * 0.3,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                >
+            <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 w-full items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: Bot,
+                    title: "Recepcionistas Virtuales",
+                    description: "Nuestros agentes de IA actúan como recepcionistas virtuales disponibles en todo momento, eliminando tiempos de espera y mejorando la satisfacción del huésped."
+                  },
+                  {
+                    icon: Languages,
+                    title: "Lenguaje Natural",
+                    description: "Interacción mediante lenguaje natural que hace que la comunicación sea fluida e intuitiva. Los huéspedes pueden hacer preguntas como lo harían con un miembro del personal."
+                  },
+                  {
+                    icon: Hotel,
+                    title: "Información Detallada",
+                    description: "Acceso inmediato a información completa sobre el hotel: menús de restaurantes, servicio a la habitación, atracciones cercanas y servicios del hotel."
+                  }
+                ].map((agent, index) => (
                   <motion.div 
-                    className="w-16 h-16 bg-insight-green/20 rounded-full flex items-center justify-center mb-5"
+                    key={index}
+                    className="backdrop-blur-sm bg-white/80 rounded-xl p-8 shadow-lg border border-gray-200/50"
                     whileHover={{ 
-                      scale: 1.2, 
-                      rotate: 5, 
-                      backgroundColor: "rgba(140, 209, 79, 0.4)",
-                      boxShadow: "0 0 12px rgba(140, 209, 79, 0.6)"
+                      scale: 1.05, 
+                      boxShadow: "0 20px 30px rgba(0,0,0,0.15)",
+                      background: "rgba(255, 255, 255, 0.95)",
+                      borderColor: "rgba(140, 209, 79, 0.4)"
                     }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                    whileTap={{ scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.7, 
+                      delay: index * 0.3,
+                      type: "spring",
+                      stiffness: 80
+                    }}
                   >
-                    <agent.icon className="w-8 h-8 text-insight-green" />
+                    <motion.div 
+                      className="w-16 h-16 bg-insight-green/20 rounded-full flex items-center justify-center mb-5"
+                      whileHover={{ 
+                        scale: 1.2, 
+                        rotate: 5, 
+                        backgroundColor: "rgba(140, 209, 79, 0.4)",
+                        boxShadow: "0 0 12px rgba(140, 209, 79, 0.6)"
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <agent.icon className="w-8 h-8 text-insight-green" />
+                    </motion.div>
+                    <h3 className="text-xl font-semibold text-insight-dark mb-3">{agent.title}</h3>
+                    <p className="text-gray-600">{agent.description}</p>
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-insight-dark mb-3">{agent.title}</h3>
-                  <p className="text-gray-600">{agent.description}</p>
-                </motion.div>
-              ))}
+                ))}
+              </div>
+              
+              <motion.div
+                className="flex items-center justify-center"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <motion.img
+                  src="/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png"
+                  alt="Agente de IA"
+                  className="rounded-2xl shadow-xl w-full h-full object-cover"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                />
+              </motion.div>
             </div>
           </div>
 
