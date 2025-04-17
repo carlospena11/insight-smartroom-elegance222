@@ -70,7 +70,6 @@ const AIAgentsSection = () => {
         <motion.div 
           className="mt-16 backdrop-blur-md bg-white/60 rounded-xl shadow-xl overflow-hidden border border-gray-200/50"
           whileHover={{ scale: 1.02, boxShadow: "0 20px 30px rgba(0,0,0,0.07)" }}
-          transition={{ duration: 0.4 }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
