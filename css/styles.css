@@ -4,21 +4,54 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Colores de la marca */
+.text-insight-dark {
+    color: #1A1F2C;
+}
+
 .text-insight-green {
     color: #8CD14F;
+}
+
+.text-insight-red {
+    color: #FF3F4F;
+}
+
+.bg-insight-dark {
+    background-color: #1A1F2C;
 }
 
 .bg-insight-green {
     background-color: #8CD14F;
 }
 
+.bg-insight-red {
+    background-color: #FF3F4F;
+}
+
 .hover\:bg-insight-green:hover {
     background-color: #7AB840;
+}
+
+.hover\:bg-insight-dark:hover {
+    background-color: #141820;
+}
+
+.hover\:text-insight-green:hover {
+    color: #8CD14F;
 }
 
 /* Animaciones */
 .animate-fade-in {
     animation: fadeIn 0.5s ease-in;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes fadeIn {
@@ -29,5 +62,25 @@ html {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .md\:flex {
+        display: none;
+    }
+    
+    .md\:hidden {
+        display: block;
     }
 }

@@ -6,67 +6,479 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Smart Hotel</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <!-- Tailwind CSS desde CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
     <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="bg-white min-h-screen">
+<body class="font-[Poppins] bg-white min-h-screen">
     <!-- Navbar -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
                 <div class="text-2xl font-semibold">
-                    <span class="text-gray-800">&lt;</span>
-                    <span class="text-gray-800">insight</span>
-                    <span class="text-red-500">.</span>
-                    <span class="text-green-500">/&gt;</span>
+                    <span class="text-insight-dark">&lt;</span>
+                    <span class="text-insight-dark">insight</span>
+                    <span class="text-insight-red">.</span>
+                    <span class="text-insight-green">/&gt;</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-600 hover:text-gray-900">Inicio</a>
-                    <a href="#caracteristicas" class="text-gray-600 hover:text-gray-900">Características</a>
-                    <a href="#nosotros" class="text-gray-600 hover:text-gray-900">Nosotros</a>
-                    <a href="#contacto" class="text-gray-600 hover:text-gray-900">Contacto</a>
-                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Inicio
+                </a>
+                <a href="#servicios" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Servicios
+                </a>
+                <a href="#caracteristicas" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Características
+                </a>
+                <a href="#compatibilidad" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Compatibilidad
+                </a>
+                <a href="#nosotros" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Nosotros
+                </a>
+                <a href="#contacto" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Contacto
+                </a>
+            </div>
+
+            <!-- Mobile Navigation Toggle -->
+            <div class="md:hidden flex items-center">
+                <button id="menuToggle" class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white p-4 shadow-lg absolute w-full hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Inicio
+                </a>
+                <a href="#servicios" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Servicios
+                </a>
+                <a href="#caracteristicas" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Características
+                </a>
+                <a href="#compatibilidad" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Compatibilidad
+                </a>
+                <a href="#nosotros" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Nosotros
+                </a>
+                <a href="#contacto" class="text-insight-dark hover:text-insight-green transition-colors">
+                    Contacto
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-24 pb-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-                        Smart Hotel Experience
+    <section id="inicio" class="relative min-h-screen bg-gradient-to-b from-gray-100 to-white flex items-center overflow-hidden pt-20">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"></div>
+            <div class="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-red-500/5 rounded-full blur-3xl"></div>
+            
+            <!-- Floating elements in background -->
+            <div class="absolute top-[20%] left-[15%] w-8 h-8 bg-insight-green/10 rounded-full animate-pulse"></div>
+            <div class="absolute bottom-[25%] right-[10%] w-6 h-6 bg-red-500/10 rounded-full animate-pulse"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 pt-20 pb-16 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-insight-dark mb-4">
+                        Soluciones <span class="text-insight-green relative">
+                            SmartRoom
+                            <span class="absolute -top-6 -right-8 text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </span>
+                        </span> para hoteles
                     </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Transformamos la experiencia hotelera con tecnología inteligente y soluciones innovadoras.
+                    
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">
+                        Transformamos la experiencia del huésped con tecnología inteligente y personalizada para el sector Hospitality.
                     </p>
-                    <a href="#contacto" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors">
-                        Contactar
-                    </a>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#servicios" class="group px-6 py-3 bg-insight-green text-white font-semibold rounded-md transition-all shadow-md relative overflow-hidden">
+                            <span class="relative z-10 flex items-center justify-center">
+                                Nuestros Servicios
+                                <span class="ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </span>
+                        </a>
+                        
+                        <a href="#contacto" class="px-6 py-3 bg-white text-insight-dark font-semibold rounded-md border border-insight-dark hover:bg-insight-dark hover:text-white transition-all flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                            Contactar
+                        </a>
+                    </div>
                 </div>
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <img src="/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png" alt="Smart Hotel Interface" class="rounded-lg shadow-xl">
+                
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <img src="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" alt="Insight SmartRoom Interface" class="rounded-lg shadow-2xl mx-auto">
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-60"></div>
+                        
+                        <div class="absolute -right-4 -bottom-4 bg-white p-3 rounded-lg shadow-lg flex items-center animate-fade-in">
+                            <div class="text-insight-dark font-semibold flex items-center">
+                                <span class="text-insight-green mr-2">+</span> Interfaz Intuitiva
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="caracteristicas" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Características Principales</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-50 rounded-lg">
-                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Sistema Centralizado</h3>
-                    <p class="text-gray-600">Gestión centralizada de todos los servicios del hotel en una única plataforma.</p>
+    <!-- Guest Experience Section -->
+    <section id="experiencia" class="py-20 relative bg-[#F5F5DC] overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-gray-50 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="animate-fade-in">
+                    <img src="/lovable-uploads/4827b0f3-267c-4c28-b450-53935fa9aeca.png" alt="Guest Experience Interface" class="rounded-xl shadow-2xl">
                 </div>
-                <!-- ... Más características similares ... -->
+                
+                <div>
+                    <h2 class="text-3xl font-bold text-insight-dark mb-6 animate-fade-in">
+                        Guest Experience
+                    </h2>
+                    <h3 class="text-2xl font-semibold text-insight-dark mb-8 animate-fade-in">
+                        Hospitality Smartroom
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 animate-fade-in">
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Solución integral</h3>
+                            <p class="text-gray-600 text-sm">Una solución integral que implementa todos los procesos de un operador de IPTV/OTT.</p>
+                        </div>
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Experiencia personalizada</h3>
+                            <p class="text-gray-600 text-sm">Una experiencia de entretenimiento personalizada, como si el huésped estuviera en su propia casa.</p>
+                        </div>
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Integración con PMS</h3>
+                            <p class="text-gray-600 text-sm">Integración con PMS para agilizar la personalización de la gestión de huéspedes.</p>
+                        </div>
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Personalización de marca</h3>
+                            <p class="text-gray-600 text-sm">Personalización según los estándares de la marca del hotel.</p>
+                        </div>
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Acceso sin emparejamiento</h3>
+                            <p class="text-gray-600 text-sm">Facilidad de acceso a todo el contenido sin necesidad de emparejar los dispositivos del huésped.</p>
+                        </div>
+                        <div class="text-center p-4 hover:bg-insight-green/5 hover:rounded-lg transition-all">
+                            <h3 class="font-bold text-insight-dark text-lg mb-2">Aumento de ingresos</h3>
+                            <p class="text-gray-600 text-sm">Promueve los servicios del hotel y aumenta los ingresos complementarios.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contacto" class="inline-block px-6 py-3 bg-insight-green text-white font-semibold rounded-md hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-md animate-fade-in">
+                        Solicitar demostración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interface Showcase Section -->
+    <section id="interfaz" class="py-20 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-insight-dark text-center mb-16 animate-fade-in">
+                Hospitality Smart Room
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-insight-dark mb-8 animate-fade-in">
+                        Canal de Información para tus invitados los cuales tendrán a la mano información relevante:
+                    </h3>
+                    
+                    <div class="relative mb-8 animate-fade-in">
+                        <img src="/lovable-uploads/d910afa8-d8a5-4cee-83d3-4cd37e6a3997.png" alt="Interface Showcase" class="rounded-lg shadow-xl">
+                        <div class="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-transparent"></div>
+                    </div>
+                    
+                    <p class="text-center text-xl font-medium text-insight-dark mb-4 animate-fade-in">
+                        Tecnología inteligente para experiencias digitales de huéspedes
+                    </p>
+                </div>
+                
+                <div class="animate-fade-in">
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-4.9-6L8 13a4 4 0 00-5 2z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 8a2 2 0 100-4 2 2 0 000 4z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Pronóstico del tiempo</h3>
+                                <p class="text-gray-600 text-sm">Podrás ver las previsiones meteorológicas en tiempo real.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Tablero de estado de vuelos en tiempo real</h3>
+                                <p class="text-gray-600 text-sm">Llegadas y salidas, herramienta de seguimiento de vuelos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Lugares turísticos</h3>
+                                <p class="text-gray-600 text-sm">Podrás visualizar los lugares de interés, atractivos turísticos de la ciudad.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Televisión Digital</h3>
+                                <p class="text-gray-600 text-sm">Podrás acceder a una gran cantidad de canales IPTV, tanto nacionales como internacionales.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Acceso de Video Streaming</h3>
+                                <p class="text-gray-600 text-sm">Adicionalmente, podrás acceder a otros servicios de streaming como VIX, Disney+, Prime Video, Paramount+ y Spotify.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 mb-6 hover:translate-x-1 transition-transform">
+                            <div class="bg-insight-dark/10 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.07c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-insight-dark mb-1">Internet wifi</h3>
+                                <p class="text-gray-600 text-sm">Código QR de acceso a internet WIFI del hotel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen Formats Section -->
+    <section id="formatos" class="py-20 bg-insight-dark text-white overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12 animate-fade-in">
+                <span class="text-insight-green font-medium mb-2 inline-block">
+                    DISPOSICIÓN INTELIGENTE
+                </span>
+                <h2 class="text-3xl font-bold mb-4">Formatos de launcher adaptados a cada hotel</h2>
+                <div class="w-20 h-1 bg-insight-green mx-auto mb-6"></div>
+                <p class="text-base text-gray-300 max-w-2xl mx-auto">
+                    Diferentes layouts que organizan de manera óptima los servicios e información en la pantalla del televisor
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
+                <div class="relative animate-fade-in">
+                    <img src="/lovable-uploads/8267491d-9223-4994-8a4b-68fe754c774d.png" alt="Diferentes layouts del sistema Hospitality" class="w-full rounded-xl shadow-2xl">
+                    
+                    <div class="absolute top-4 left-4 bg-insight-green/80 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
+                        Layouts personalizables
+                    </div>
+                    
+                    <div class="absolute bottom-4 right-4 bg-insight-green/80 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
+                        Organización inteligente
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-bold mb-6">
+                        Disposición óptima en pantalla
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-8">
+                        Nuestro sistema ofrece diferentes layouts que organizan de manera eficiente todos los servicios e información en la pantalla del televisor, asegurando una experiencia fluida y accesible para los huéspedes.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 bg-white/10 rounded-lg p-4 backdrop-blur-sm hover:bg-white/15 transition-colors">
+                            <div class="w-12 h-12 bg-insight-green/20 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Layout Clásico</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Distribución tradicional de elementos
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Acceso rápido a funciones principales
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Navegación intuitiva
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white/10 rounded-lg p-4 backdrop-blur-sm hover:bg-white/15 transition-colors">
+                            <div class="w-12 h-12 bg-insight-green/20 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Layout Cuadrícula</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Vista de todos los servicios
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Organización por categorías
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Acceso directo a funciones
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white/10 rounded-lg p-4 backdrop-blur-sm hover:bg-white/15 transition-colors">
+                            <div class="w-12 h-12 bg-insight-green/20 rounded-full flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-insight-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <rect x="4" y="4" width="6" height="6" rx="1"></rect>
+                                    <rect x="14" y="4" width="6" height="6" rx="1"></rect>
+                                    <rect x="4" y="14" width="6" height="6" rx="1"></rect>
+                                    <rect x="14" y="14" width="6" height="6" rx="1"></rect>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-1">Layout Modular</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Widgets personalizables
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Contenido dinámico
+                                    </li>
+                                    <li class="text-sm text-gray-300 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-insight-green rounded-full flex-shrink-0"></span>
+                                        Información en tiempo real
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors animate-fade-in">
+                    <div class="h-1 w-12 bg-insight-green mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-3">Widgets Dinámicos</h3>
+                    <p class="text-gray-300 text-sm">
+                        Módulos que muestran información en tiempo real como el clima, vuelos y eventos locales.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <a href="#contacto" class="text-insight-green text-sm font-medium flex items-center">
+                            Más información
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors animate-fade-in">
+                    <div class="h-1 w-12 bg-insight-green mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-3">Layouts Flexibles</h3>
+                    <p class="text-gray-300 text-sm">
+                        Diferentes disposiciones que se adaptan al contenido y servicios específicos de cada hotel.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <a href="#contacto" class="text-insight-green text-sm font-medium flex items-center">
+                            Más información
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors animate-fade-in">
+                    <div class="h-1 w-12 bg-insight-green mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-3">Personalización Total</h3>
+                    <p class="text-gray-300 text-sm">
+                        Cada elemento de la interfaz puede ser personalizado y ubicado según las preferencias del hotel.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/10">
+                        <a href="#contacto" class="text-insight-green text-sm font-medium flex items-center">
+                            Más información
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -80,6 +492,16 @@
                     <p class="text-gray-600 mb-4">
                         Somos líderes en soluciones tecnológicas para el sector hotelero, 
                         especializados en crear experiencias únicas para los huéspedes.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Nuestro equipo de expertos está comprometido con la innovación y la excelencia,
+                        proporcionando soluciones personalizadas que mejoran la experiencia del huésped
+                        y aumentan la eficiencia operativa de los hoteles.
+                    </p>
+                    <p class="text-gray-600">
+                        Con años de experiencia en el sector, entendemos las necesidades específicas
+                        de la industria hotelera y nos esforzamos por ofrecer tecnología que marca
+                        la diferencia.
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-8 md:mt-0">
@@ -96,18 +518,18 @@
             <div class="max-w-lg mx-auto">
                 <form id="contactForm" class="space-y-6">
                     <div>
-                        <label class="block text-gray-700 mb-2">Nombre</label>
-                        <input type="text" class="w-full px-4 py-2 border rounded-lg" required>
+                        <label for="nombre" class="block text-gray-700 mb-2">Nombre</label>
+                        <input type="text" id="nombre" class="w-full px-4 py-2 border rounded-lg" required>
                     </div>
                     <div>
-                        <label class="block text-gray-700 mb-2">Email</label>
-                        <input type="email" class="w-full px-4 py-2 border rounded-lg" required>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg" required>
                     </div>
                     <div>
-                        <label class="block text-gray-700 mb-2">Mensaje</label>
-                        <textarea class="w-full px-4 py-2 border rounded-lg" rows="4" required></textarea>
+                        <label for="mensaje" class="block text-gray-700 mb-2">Mensaje</label>
+                        <textarea id="mensaje" class="w-full px-4 py-2 border rounded-lg" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors">
+                    <button type="submit" class="w-full bg-insight-green text-white py-2 rounded-lg hover:bg-green-600 transition-colors">
                         Enviar Mensaje
                     </button>
                 </form>
@@ -132,6 +554,23 @@
                         <li><a href="#contacto" class="text-gray-400 hover:text-white">Contacto</a></li>
                     </ul>
                 </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Servicios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Smart Room</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Integración PMS</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Personalización</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Soporte Técnico</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Ciudad de México, México</li>
+                        <li>contacto@insightsmartroom.com</li>
+                        <li>+52 55 1234 5678</li>
+                    </ul>
+                </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
                 <p>&copy; 2024 Insight. Todos los derechos reservados.</p>
@@ -139,6 +578,48 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 rounded-full bg-insight-green text-white shadow-lg hover:bg-green-600 transition-colors z-50 hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
     <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
