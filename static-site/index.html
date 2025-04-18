@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -44,10 +45,14 @@
       async function loadComponent(containerId, componentPath) {
         try {
           const response = await fetch(componentPath);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
           const html = await response.text();
           document.getElementById(containerId).innerHTML = html;
         } catch (error) {
           console.error(`Error loading ${componentPath}:`, error);
+          document.getElementById(containerId).innerHTML = `<div style="color: red; padding: 20px;">Error loading component: ${componentPath}</div>`;
         }
       }
 
@@ -64,8 +69,11 @@
         // Load scripts after components are loaded
         setTimeout(() => {
           loadComponent('scripts', 'components/scripts.html');
-        }, 100);
+        }, 500);
       });
     </script>
+    
+    <!-- Hidden container for scripts -->
+    <div id="scripts" style="display: none;"></div>
   </body>
 </html>
