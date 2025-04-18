@@ -1,31 +1,14 @@
 
-# Insight SmartRoom - Sistema de Gestión Hotelera
+# Insight SmartRoom - Versión Estática
 
-## Requisitos Previos
-- Node.js 18 o superior
-- npm 9 o superior
-
-## Instalación
-
+## Instalación Simple
 1. Descomprimir el archivo ZIP
-2. Abrir una terminal en la carpeta del proyecto
-3. Instalar dependencias:
-   ```bash
-   npm install
-   ```
-4. Iniciar el servidor de desarrollo:
-   ```bash 
-   npm run dev
-   ```
+2. Abrir el archivo `index.html` en su navegador web preferido
 
-5. Abrir http://localhost:5173 en su navegador
-
-## Características Principales
-- Sistema centralizado de información
-- Personalización completa
-- Agentes de IA integrados
-- Gestión de experiencia de huéspedes
-- Análisis de datos
+## Notas
+- No requiere instalación de Node.js ni npm
+- Compatible con cualquier servidor web estático
+- Funciona directamente abriendo el archivo index.html
 
 ## Soporte
 Para soporte técnico, contactar a soporte@insightsmartroom.com

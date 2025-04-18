@@ -1,0 +1,33 @@
+
+/* Estilos personalizados */
+html {
+    scroll-behavior: smooth;
+}
+
+.text-insight-green {
+    color: #8CD14F;
+}
+
+.bg-insight-green {
+    background-color: #8CD14F;
+}
+
+.hover\:bg-insight-green:hover {
+    background-color: #7AB840;
+}
+
+/* Animaciones */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

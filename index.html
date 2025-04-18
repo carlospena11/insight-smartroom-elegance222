@@ -1,15 +1,144 @@
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Smart Hotel</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-semibold">
+                    <span class="text-gray-800">&lt;</span>
+                    <span class="text-gray-800">insight</span>
+                    <span class="text-red-500">.</span>
+                    <span class="text-green-500">/&gt;</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-gray-900">Inicio</a>
+                    <a href="#caracteristicas" class="text-gray-600 hover:text-gray-900">Características</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-gray-900">Nosotros</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-gray-900">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+                        Smart Hotel Experience
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Transformamos la experiencia hotelera con tecnología inteligente y soluciones innovadoras.
+                    </p>
+                    <a href="#contacto" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                        Contactar
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png" alt="Smart Hotel Interface" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Características Principales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sistema Centralizado</h3>
+                    <p class="text-gray-600">Gestión centralizada de todos los servicios del hotel en una única plataforma.</p>
+                </div>
+                <!-- ... Más características similares ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+                    <p class="text-gray-600 mb-4">
+                        Somos líderes en soluciones tecnológicas para el sector hotelero, 
+                        especializados en crear experiencias únicas para los huéspedes.
+                    </p>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png" alt="Nuestro Equipo" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contáctanos</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Nombre</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Mensaje</label>
+                        <textarea class="w-full px-4 py-2 border rounded-lg" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Insight</h3>
+                    <p class="text-gray-400">Soluciones tecnológicas para hoteles</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="#caracteristicas" class="text-gray-400 hover:text-white">Características</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-white">Nosotros</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2024 Insight. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
