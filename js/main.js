@@ -1,4 +1,3 @@
-
 // Smooth scroll para los enlaces de navegación
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -25,7 +24,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 
 // Función para animaciones al hacer scroll
-window.addEventListener('scroll', function() {
+function handleScrollAnimations() {
     const elements = document.querySelectorAll('.animate-fade-in');
     
     elements.forEach(element => {
@@ -33,24 +32,38 @@ window.addEventListener('scroll', function() {
         
         // Si el elemento está visible en la ventana
         if(position.top < window.innerHeight && position.bottom >= 0) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+            element.classList.add('visible');
         }
     });
-});
+}
 
-// Inicializar elementos con opacidad 0 para animación
-document.addEventListener('DOMContentLoaded', function() {
+// Inicializar elementos animados
+function initializeAnimations() {
     const elements = document.querySelectorAll('.animate-fade-in');
     
     elements.forEach(element => {
+        // Configurar estado inicial
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
     
     // Activar animaciones para elementos visibles al cargar
     setTimeout(() => {
-        window.dispatchEvent(new Event('scroll'));
+        handleScrollAnimations();
     }, 100);
+}
+
+// Event listeners
+window.addEventListener('scroll', handleScrollAnimations);
+document.addEventListener('DOMContentLoaded', initializeAnimations);
+
+// Agregar efectos hover a elementos
+document.querySelectorAll('.hover-scale').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        element.style.transform = 'scale(1.05)';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        element.style.transform = 'scale(1)';
+    });
 });

@@ -1,57 +1,51 @@
 
-/* Estilos personalizados */
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Colores de la marca */
-.text-insight-dark {
-    color: #1A1F2C;
-}
-
-.text-insight-green {
-    color: #8CD14F;
-}
-
-.text-insight-red {
-    color: #FF3F4F;
-}
-
-.bg-insight-dark {
-    background-color: #1A1F2C;
-}
-
-.bg-insight-green {
-    background-color: #8CD14F;
-}
-
-.bg-insight-red {
-    background-color: #FF3F4F;
-}
-
-.hover\:bg-insight-green:hover {
-    background-color: #7AB840;
-}
-
-.hover\:bg-insight-dark:hover {
-    background-color: #141820;
-}
-
-.hover\:text-insight-green:hover {
-    color: #8CD14F;
-}
+/* ... keep existing code (brand colors and basic styles) */
 
 /* Animaciones */
 .animate-fade-in {
-    animation: fadeIn 0.5s ease-in;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.story-link {
+    position: relative;
+    display: inline-block;
+}
+
+.story-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #8CD14F;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 @keyframes fadeIn {
@@ -76,11 +70,5 @@ body {
 
 /* Media queries para responsividad */
 @media (max-width: 768px) {
-    .md\:flex {
-        display: none;
-    }
-    
-    .md\:hidden {
-        display: block;
-    }
+    /* ... keep existing code (media query styles) */
 }
