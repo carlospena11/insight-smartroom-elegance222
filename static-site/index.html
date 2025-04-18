@@ -10,478 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="logo">
-          <span class="logo-text">Insight Smart Hotel</span>
-        </div>
-        <ul class="desktop-nav">
-          <li><a href="#hero" class="nav-link">Inicio</a></li>
-          <li><a href="#ai-agents" class="nav-link">IA Agentes</a></li>
-          <li><a href="#features" class="nav-link">Características</a></li>
-          <li><a href="#guest-experience" class="nav-link">Experiencia</a></li>
-          <li><a href="#about" class="nav-link">Nosotros</a></li>
-          <li><a href="#contact" class="nav-link">Contacto</a></li>
-        </ul>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-          <div class="menu-icon"></div>
-        </button>
-      </div>
-      <div class="mobile-nav" id="mobileNav">
-        <a href="#hero">Inicio</a>
-        <a href="#ai-agents">IA Agentes</a>
-        <a href="#features">Características</a>
-        <a href="#guest-experience">Experiencia</a>
-        <a href="#about">Nosotros</a>
-        <a href="#contact">Contacto</a>
-      </div>
-    </nav>
+    <!-- Include navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Include hero section -->
+    <div id="hero-container"></div>
+    
+    <!-- Include AI agents section -->
+    <div id="ai-agents-container"></div>
+    
+    <!-- Include features section -->
+    <div id="features-container"></div>
+    
+    <!-- Include guest experience section -->
+    <div id="guest-experience-container"></div>
+    
+    <!-- Include contact section -->
+    <div id="contact-container"></div>
+    
+    <!-- Include footer -->
+    <div id="footer-container"></div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Revoluciona la experiencia de tus huéspedes con IA avanzada</h1>
-            <p>Insight Smart Hotel transforma la gestión hotelera con inteligencia artificial, mejorando la eficiencia operativa y la satisfacción del cliente.</p>
-            <div class="hero-buttons">
-              <a href="#contact" class="button button-primary">Solicitar Demo</a>
-              <a href="#features" class="button button-secondary">Ver Características</a>
-            </div>
-          </div>
-          <div class="hero-image">
-            <img src="lovable-uploads/8267491d-9223-4994-8a4b-68fe754c774d.png" alt="Insight Smart Hotel Dashboard" class="rounded-image shadow-effect">
-            <div class="feature-badge">IA Integrada</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI Agents Section -->
-    <section id="ai-agents" class="ai-agents-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Agentes de Inteligencia Artificial</h2>
-          <div class="title-bar"></div>
-          <p>Nuestros agentes de IA revolucionan la experiencia del huésped, brindando atención personalizada las 24 horas.</p>
-        </div>
-
-        <div class="agents-grid">
-          <div class="agent-card">
-            <div class="agent-icon">
-              <i class="agent-icon-concierge"></i>
-            </div>
-            <h3>Concierge Virtual</h3>
-            <p>Asistente personal que ofrece recomendaciones personalizadas y gestiona reservas para los huéspedes.</p>
-          </div>
-          
-          <div class="agent-card">
-            <div class="agent-icon">
-              <i class="agent-icon-support"></i>
-            </div>
-            <h3>Soporte 24/7</h3>
-            <p>Resuelve consultas y problemas de los huéspedes en cualquier momento, sin tiempo de espera.</p>
-          </div>
-          
-          <div class="agent-card">
-            <div class="agent-icon">
-              <i class="agent-icon-insights"></i>
-            </div>
-            <h3>Análisis Predictivo</h3>
-            <p>Anticipa las necesidades de los huéspedes basándose en comportamientos y preferencias anteriores.</p>
-          </div>
-          
-          <div class="agent-card">
-            <div class="agent-icon">
-              <i class="agent-icon-translate"></i>
-            </div>
-            <h3>Traductor Multilingüe</h3>
-            <p>Elimina las barreras del idioma con traducción instantánea en más de 50 idiomas.</p>
-          </div>
-        </div>
-
-        <div class="agent-image-container">
-          <img src="lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png" alt="Agente de IA" class="agent-image">
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Características Principales</h2>
-          <p>Descubre las herramientas avanzadas que hacen de Insight Smart Hotel la solución definitiva para la gestión hotelera moderna.</p>
-        </div>
-
-        <div class="feature-cards">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-dashboard"></i>
-            </div>
-            <h3>Dashboard Intuitivo</h3>
-            <p>Visualiza todos los datos importantes de tu hotel en un solo lugar, con estadísticas en tiempo real.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-booking"></i>
-            </div>
-            <h3>Gestión de Reservas</h3>
-            <p>Sistema automatizado que optimiza la ocupación y minimiza los errores en las reservas.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-analytics"></i>
-            </div>
-            <h3>Análisis Avanzado</h3>
-            <p>Obtén insights valiosos sobre el rendimiento de tu hotel y el comportamiento de los huéspedes.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-integration"></i>
-            </div>
-            <h3>Integración Completa</h3>
-            <p>Compatible con los principales sistemas de gestión hotelera y plataformas de reserva online.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-automation"></i>
-            </div>
-            <h3>Automatización</h3>
-            <p>Reduce tareas manuales y optimiza la eficiencia operativa con procesos automatizados.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="feature-icon-security"></i>
-            </div>
-            <h3>Seguridad Avanzada</h3>
-            <p>Protección de datos con cifrado de nivel bancario y cumplimiento de normativas internacionales.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Guest Experience Section -->
-    <section id="guest-experience" class="guest-experience-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Mejorando la Experiencia del Huésped</h2>
-          <p>Nuestras soluciones están diseñadas para crear momentos memorables y elevar la satisfacción de tus huéspedes.</p>
-        </div>
-
-        <div class="experience-content">
-          <div class="experience-image">
-            <img src="lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png" alt="Experiencia del huésped" class="rounded-image shadow-effect">
-          </div>
-          <div class="experience-text">
-            <div class="experience-item">
-              <h3>Check-in Digital</h3>
-              <p>Proceso de registro rápido y sin contacto que elimina las esperas y mejora la primera impresión.</p>
-            </div>
-            <div class="experience-item">
-              <h3>Personalización Inteligente</h3>
-              <p>Recomendaciones y ofertas adaptadas a las preferencias individuales de cada huésped.</p>
-            </div>
-            <div class="experience-item">
-              <h3>Feedback en Tiempo Real</h3>
-              <p>Captura opiniones durante la estancia para resolver problemas antes del check-out.</p>
-            </div>
-            <div class="experience-item">
-              <h3>Comunicación Multicanal</h3>
-              <p>Interacción con los huéspedes a través de su canal preferido: app, SMS, WhatsApp o redes sociales.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compatibility Section -->
-    <section id="compatibility" class="compatibility-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Compatible con Múltiples Dispositivos</h2>
-          <p>Accede a Insight Smart Hotel desde cualquier dispositivo, en cualquier momento y lugar.</p>
-        </div>
-
-        <div class="compatibility-content">
-          <div class="compatibility-text">
-            <p>Nuestra plataforma está diseñada para funcionar perfectamente en cualquier dispositivo, desde ordenadores de escritorio hasta smartphones, asegurando una experiencia de usuario consistente y de alta calidad.</p>
-            
-            <h3>Ventajas Multi-dispositivo</h3>
-            
-            <div class="compatibility-advantage">
-              <h4>Acceso desde Cualquier Lugar</h4>
-              <p>Gestiona tu hotel desde la oficina, durante un viaje o desde casa con la misma facilidad.</p>
-            </div>
-            
-            <div class="compatibility-advantage">
-              <h4>Interfaz Adaptativa</h4>
-              <p>Diseño responsive que se ajusta automáticamente a diferentes tamaños de pantalla.</p>
-            </div>
-            
-            <div class="compatibility-advantage">
-              <h4>Sincronización en Tiempo Real</h4>
-              <p>Todos los cambios se actualizan instantáneamente en todos los dispositivos conectados.</p>
-            </div>
-          </div>
-          
-          <div class="compatibility-device">
-            <img src="lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png" alt="Compatibilidad con múltiples dispositivos">
-            
-            <div class="device-note">
-              <p>Compatible con los principales sistemas operativos: iOS, Android, Windows y macOS.</p>
-            </div>
-            
-            <div class="compatibility-brands">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apple/apple-original.svg" alt="Apple">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" alt="Android">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="Windows">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/chrome/chrome-original.svg" alt="Chrome">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Sobre Nosotros</h2>
-          <p>Conoce el equipo detrás de Insight Smart Hotel y nuestra misión de transformar la industria hotelera.</p>
-        </div>
-
-        <div class="about-content">
-          <div class="about-image">
-            <img src="lovable-uploads/d910afa8-d8a5-4cee-83d3-4cd37e6a3997.png" alt="Equipo de Insight Smart Hotel" class="rounded-image shadow-effect">
-          </div>
-          <div class="about-text">
-            <h2>Nuestra Historia</h2>
-            <p>Insight Smart Hotel nació de la pasión por combinar la hospitalidad tradicional con la tecnología más avanzada. Fundada por un equipo de expertos en hotelería y desarrollo de software, nuestra empresa se ha dedicado a crear soluciones que resuelven los desafíos reales de la industria hotelera.</p>
-            <p>Con años de experiencia y colaborando con hoteles de todo el mundo, hemos desarrollado una plataforma que no solo mejora la eficiencia operativa, sino que también eleva significativamente la experiencia del huésped, ayudando a nuestros clientes a destacar en un mercado altamente competitivo.</p>
-            <p>Nuestro compromiso es seguir innovando y ofreciendo herramientas que permitan a los hoteles adaptarse a un entorno en constante evolución, manteniendo siempre el toque humano que caracteriza a la mejor hospitalidad.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Contacta con Nosotros</h2>
-          <p>Estamos aquí para responder tus preguntas y ayudarte a implementar Insight Smart Hotel en tu negocio.</p>
-        </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Información de Contacto</h3>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="contact-icon-location"></i>
-              </div>
-              <div class="contact-detail">
-                <h4>Dirección</h4>
-                <p>Calle Tecnología 123, Ciudad Innovación</p>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="contact-icon-email"></i>
-              </div>
-              <div class="contact-detail">
-                <h4>Email</h4>
-                <p>info@insightsmarthotel.com</p>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="contact-icon-phone"></i>
-              </div>
-              <div class="contact-detail">
-                <h4>Teléfono</h4>
-                <p>+34 912 345 678</p>
-              </div>
-            </div>
-            
-            <div class="social-links">
-              <h4>Síguenos</h4>
-              <div class="social-icons">
-                <a href="#" class="social-icon">FB</a>
-                <a href="#" class="social-icon">TW</a>
-                <a href="#" class="social-icon">IN</a>
-                <a href="#" class="social-icon">LI</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="contact-form">
-            <h3>Envíanos un Mensaje</h3>
-            
-            <form id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Nombre</label>
-                  <input type="text" id="name" name="name" placeholder="Tu nombre">
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Tu email">
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" placeholder="Asunto del mensaje">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
-              </div>
-              
-              <button type="submit" class="button button-primary">Enviar Mensaje</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column">
-            <div class="footer-logo">Insight Smart Hotel</div>
-            <p>Transformando la experiencia hotelera con inteligencia artificial y tecnología avanzada.</p>
-            <div class="footer-social">
-              <a href="#">FB</a>
-              <a href="#">TW</a>
-              <a href="#">IN</a>
-              <a href="#">LI</a>
-            </div>
-          </div>
-          
-          <div class="footer-column">
-            <h3>Enlaces Rápidos</h3>
-            <ul class="footer-links">
-              <li><a href="#hero">Inicio</a></li>
-              <li><a href="#ai-agents">IA Agentes</a></li>
-              <li><a href="#features">Características</a></li>
-              <li><a href="#guest-experience">Experiencia</a></li>
-              <li><a href="#about">Nosotros</a></li>
-              <li><a href="#contact">Contacto</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-column">
-            <h3>Soluciones</h3>
-            <ul class="footer-links">
-              <li><a href="#">Hoteles Pequeños</a></li>
-              <li><a href="#">Cadenas Hoteleras</a></li>
-              <li><a href="#">Apartamentos Turísticos</a></li>
-              <li><a href="#">Resorts & Spas</a></li>
-              <li><a href="#">Hostales & B&Bs</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-column">
-            <h3>Contacto</h3>
-            <ul class="footer-contact">
-              <li>Calle Tecnología 123, Ciudad Innovación</li>
-              <li>info@insightsmarthotel.com</li>
-              <li>+34 912 345 678</li>
-              <li>Lun - Vie: 9:00 - 18:00</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; 2025 Insight Smart Hotel. Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top">↑</button>
-
+    <!-- Script to load components -->
     <script>
-      // Simple JavaScript para la funcionalidad básica
+      // Function to load HTML components
+      async function loadComponent(containerId, componentPath) {
+        try {
+          const response = await fetch(componentPath);
+          const html = await response.text();
+          document.getElementById(containerId).innerHTML = html;
+        } catch (error) {
+          console.error(`Error loading ${componentPath}:`, error);
+        }
+      }
+
+      // Load all components when the page loads
       document.addEventListener('DOMContentLoaded', function() {
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuToggle && mobileNav) {
-          mobileMenuToggle.addEventListener('click', function() {
-            mobileMenuToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-          });
-        }
-        
-        // Scroll to top button
-        const scrollToTopButton = document.getElementById('scrollToTop');
-        
-        if (scrollToTopButton) {
-          window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-              scrollToTopButton.classList.add('visible');
-            } else {
-              scrollToTopButton.classList.remove('visible');
-            }
-          });
-          
-          scrollToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          });
-        }
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (!targetId) return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (!targetElement) return;
-            
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            if (mobileNav && mobileNav.classList.contains('active')) {
-              mobileMenuToggle.classList.remove('active');
-              mobileNav.classList.remove('active');
-            }
-          });
-        });
-        
-        // Simple form submission (for demonstration)
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-          contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gracias por tu mensaje. Te contactaremos pronto.');
-            contactForm.reset();
-          });
-        }
+        loadComponent('navbar-container', 'components/navbar.html');
+        loadComponent('hero-container', 'components/hero.html');
+        loadComponent('ai-agents-container', 'components/ai-agents.html');
+        loadComponent('features-container', 'components/features.html');
+        loadComponent('guest-experience-container', 'components/guest-experience.html');
+        loadComponent('contact-container', 'components/contact.html');
+        loadComponent('footer-container', 'components/footer.html');
+
+        // Load scripts after components are loaded
+        setTimeout(() => {
+          loadComponent('scripts', 'components/scripts.html');
+        }, 100);
       });
     </script>
   </body>
