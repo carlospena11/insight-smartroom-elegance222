@@ -1,0 +1,51 @@
+
+.ai-agents-section {
+  padding: 100px 0;
+  background-color: var(--color-gray-light);
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.agent-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.agent-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.agent-icon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(140, 209, 79, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+}
+
+.agent-image-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.agent-image {
+  transition: transform 0.5s ease;
+}
+
+.agent-image:hover {
+  transform: scale(1.05) rotate(2deg);
+}
