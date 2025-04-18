@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Smart Hotel</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.ico">
     <!-- Tailwind CSS desde CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Estilos personalizados -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <!-- Lovable Script -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <!-- Precargar imágenes importantes -->
+    <link rel="preload" href="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" as="image">
+    <link rel="preload" href="/lovable-uploads/4827b0f3-267c-4c28-b450-53935fa9aeca.png" as="image">
+    <link rel="preload" href="/lovable-uploads/d910afa8-d8a5-4cee-83d3-4cd37e6a3997.png" as="image">
+    <link rel="preload" href="/lovable-uploads/8267491d-9223-4994-8a4b-68fe754c774d.png" as="image">
 </head>
-<body class="font-[Poppins] bg-white min-h-screen">
+<body class="font-[Poppins] bg-white min-h-screen" onload="initializeAnimations()">
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -97,7 +102,7 @@
         
         <div class="container mx-auto px-4 pt-20 pb-16 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in visible">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-insight-dark mb-4">
                         Soluciones <span class="text-insight-green relative">
                             SmartRoom
@@ -140,7 +145,7 @@
                         <img src="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" alt="Insight SmartRoom Interface" class="rounded-lg shadow-2xl mx-auto">
                         <div class="absolute inset-0 rounded-lg bg-gradient-to-t from-black/30 to-transparent opacity-60"></div>
                         
-                        <div class="absolute -right-4 -bottom-4 bg-white p-3 rounded-lg shadow-lg flex items-center animate-fade-in">
+                        <div class="absolute -right-4 -bottom-4 bg-white p-3 rounded-lg shadow-lg flex items-center animate-fade-in visible">
                             <div class="text-insight-dark font-semibold flex items-center">
                                 <span class="text-insight-green mr-2">+</span> Interfaz Intuitiva
                             </div>
@@ -446,181 +451,3 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
-                    </div>
-                </div>
-
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors animate-fade-in">
-                    <div class="h-1 w-12 bg-insight-green mb-4"></div>
-                    <h3 class="text-xl font-semibold mb-3">Layouts Flexibles</h3>
-                    <p class="text-gray-300 text-sm">
-                        Diferentes disposiciones que se adaptan al contenido y servicios específicos de cada hotel.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/10">
-                        <a href="#contacto" class="text-insight-green text-sm font-medium flex items-center">
-                            Más información
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-colors animate-fade-in">
-                    <div class="h-1 w-12 bg-insight-green mb-4"></div>
-                    <h3 class="text-xl font-semibold mb-3">Personalización Total</h3>
-                    <p class="text-gray-300 text-sm">
-                        Cada elemento de la interfaz puede ser personalizado y ubicado según las preferencias del hotel.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/10">
-                        <a href="#contacto" class="text-insight-green text-sm font-medium flex items-center">
-                            Más información
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="nosotros" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
-                    <p class="text-gray-600 mb-4">
-                        Somos líderes en soluciones tecnológicas para el sector hotelero, 
-                        especializados en crear experiencias únicas para los huéspedes.
-                    </p>
-                    <p class="text-gray-600 mb-4">
-                        Nuestro equipo de expertos está comprometido con la innovación y la excelencia,
-                        proporcionando soluciones personalizadas que mejoran la experiencia del huésped
-                        y aumentan la eficiencia operativa de los hoteles.
-                    </p>
-                    <p class="text-gray-600">
-                        Con años de experiencia en el sector, entendemos las necesidades específicas
-                        de la industria hotelera y nos esforzamos por ofrecer tecnología que marca
-                        la diferencia.
-                    </p>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <img src="/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png" alt="Nuestro Equipo" class="rounded-lg shadow-lg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Contáctanos</h2>
-            <div class="max-w-lg mx-auto">
-                <form id="contactForm" class="space-y-6">
-                    <div>
-                        <label for="nombre" class="block text-gray-700 mb-2">Nombre</label>
-                        <input type="text" id="nombre" class="w-full px-4 py-2 border rounded-lg" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700 mb-2">Email</label>
-                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg" required>
-                    </div>
-                    <div>
-                        <label for="mensaje" class="block text-gray-700 mb-2">Mensaje</label>
-                        <textarea id="mensaje" class="w-full px-4 py-2 border rounded-lg" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-insight-green text-white py-2 rounded-lg hover:bg-green-600 transition-colors">
-                        Enviar Mensaje
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Insight</h3>
-                    <p class="text-gray-400">Soluciones tecnológicas para hoteles</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-gray-400 hover:text-white">Inicio</a></li>
-                        <li><a href="#caracteristicas" class="text-gray-400 hover:text-white">Características</a></li>
-                        <li><a href="#nosotros" class="text-gray-400 hover:text-white">Nosotros</a></li>
-                        <li><a href="#contacto" class="text-gray-400 hover:text-white">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Servicios</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Smart Room</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Integración PMS</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Personalización</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Soporte Técnico</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contacto</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Ciudad de México, México</li>
-                        <li>contacto@insightsmartroom.com</li>
-                        <li>+52 55 1234 5678</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; 2024 Insight. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 rounded-full bg-insight-green text-white shadow-lg hover:bg-green-600 transition-colors z-50 hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
-    <script src="js/main.js"></script>
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Scroll to top button functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.remove('hidden');
-            } else {
-                scrollToTopBtn.classList.add('hidden');
-            }
-        });
-        
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-</body>
-</html>
