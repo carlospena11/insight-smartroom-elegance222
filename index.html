@@ -1,15 +1,152 @@
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Smart Hotel</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">
+                    <span class="text-dark">&lt;</span>
+                    <span class="text-dark">insight</span>
+                    <span class="text-red">.</span>
+                    <span class="text-green">/&gt;</span>
+                </span>
+            </div>
+            <div class="desktop-nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#caracteristicas" class="nav-link">Características</a>
+                <a href="#compatibilidad" class="nav-link">Compatibilidad</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+        <div class="mobile-nav">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#caracteristicas" class="nav-link">Características</a>
+            <a href="#compatibilidad" class="nav-link">Compatibilidad</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate-fade-in">
+                        Soluciones <span class="text-green">SmartRoom</span> para hoteles
+                    </h1>
+                    <p class="animate-fade-in delay-1">
+                        Transformamos la experiencia del huésped con tecnología inteligente y personalizada para el sector Hospitality.
+                    </p>
+                    <div class="hero-buttons animate-fade-in delay-2">
+                        <a href="#servicios" class="button button-primary">
+                            Nuestros Servicios
+                            <span class="arrow-icon">→</span>
+                        </a>
+                        <a href="#contacto" class="button button-secondary">
+                            <span class="icon">⚡</span> Contactar
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image animate-fade-in delay-3">
+                    <img src="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" 
+                         alt="Insight SmartRoom Interface" 
+                         class="rounded-image shadow-effect">
+                    <div class="feature-badge">
+                        + Interfaz Intuitiva
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resto de secciones... -->
+    <section id="experiencia" class="experience-section">
+        <!-- ... Contenido de la sección de experiencia ... -->
+    </section>
+
+    <section id="interfaz" class="interface-section">
+        <!-- ... Contenido de la sección de interfaz ... -->
+    </section>
+
+    <section id="formatos" class="formats-section">
+        <!-- ... Contenido de la sección de formatos ... -->
+    </section>
+
+    <section id="caracteristicas" class="features-section">
+        <!-- ... Contenido de la sección de características ... -->
+    </section>
+
+    <section id="compatibilidad" class="compatibility-section">
+        <!-- ... Contenido de la sección de compatibilidad ... -->
+    </section>
+
+    <section id="nosotros" class="about-section">
+        <!-- ... Contenido de la sección Nosotros ... -->
+    </section>
+
+    <section id="contacto" class="contact-section">
+        <!-- ... Contenido de la sección de contacto ... -->
+    </section>
+
+    <footer class="footer">
+        <!-- ... Contenido del footer ... -->
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">↑</button>
+
+    <script>
+        // Menú móvil
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        });
+
+        // Botón scroll to top
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.classList.add('visible');
+            } else {
+                scrollToTopButton.classList.remove('visible');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animaciones al scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
 </html>

@@ -1,5 +1,3 @@
-
-/* Variables */
 :root {
   --color-green: #8CD14F;
   --color-red: #FF3F4F;
@@ -1174,10 +1172,4 @@ ul {
   }
   
   .format-features {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-}
+    grid-template-
