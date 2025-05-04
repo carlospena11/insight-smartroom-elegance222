@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { ImageManager, siteImages } from "../ImageManager";
 
 const AgentImage = () => {
   return (
@@ -9,10 +10,8 @@ const AgentImage = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
     >
-      <motion.img
-        src="/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png"
-        alt="Agente de IA"
-        className="rounded-2xl shadow-xl w-full h-full object-cover"
+      <motion.div
+        className="w-full h-full"
         whileHover={{ 
           scale: 1.05,
           rotate: 2,
@@ -30,7 +29,14 @@ const AgentImage = () => {
             ease: "easeInOut"
           }
         }}
-      />
+      >
+        <ImageManager 
+          src={siteImages.aiAgent} 
+          alt="Agente de IA"
+          className="rounded-2xl shadow-xl w-full h-full object-cover"
+          fallbackSrc="/placeholder.svg"
+        />
+      </motion.div>
     </motion.div>
   );
 };
