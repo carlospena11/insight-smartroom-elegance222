@@ -171,7 +171,7 @@ const ImageAdminPanel = () => {
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-insight-dark mb-2">Panel de Administración de Imágenes</h1>
+        <h1 className="text-3xl font-bold text-insight-dark mb-2">Panel de Gestión de Imágenes</h1>
         <p className="text-gray-600">
           Administra todas las imágenes de tu sitio desde un único lugar. 
           Los cambios se guardarán en el almacenamiento local del navegador.

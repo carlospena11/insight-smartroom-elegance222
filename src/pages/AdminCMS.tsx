@@ -42,7 +42,7 @@ const AdminCMS = () => {
             Volver al inicio
           </Button>
           
-          <h1 className="text-3xl font-bold text-insight-dark mb-6">Panel de Administración</h1>
+          <h1 className="text-3xl font-bold text-insight-dark mb-6">Panel de Clientes</h1>
           
           <Tabs defaultValue="images" value={activeTab} onValueChange={handleTabChange} className="w-full">
             <TabsList className="mb-6">
