@@ -15,6 +15,14 @@ const AdminCMS = () => {
   const [activeTab, setActiveTab] = useState("images");
   const { toast } = useToast();
   
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    toast({
+      title: `Pestaña cambiada`,
+      description: `Ahora estás en la sección de ${value === 'images' ? 'Imágenes' : 'Logo'}`,
+    });
+  };
+  
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -31,7 +39,7 @@ const AdminCMS = () => {
           
           <h1 className="text-3xl font-bold text-insight-dark mb-6">Panel de Administración</h1>
           
-          <Tabs defaultValue="images" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue="images" value={activeTab} onValueChange={handleTabChange} className="w-full">
             <TabsList className="mb-6">
               <TabsTrigger value="images">Imágenes del Sitio</TabsTrigger>
               <TabsTrigger value="logo">Logo</TabsTrigger>

@@ -1,5 +1,7 @@
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { ImageManager, siteImages } from "./ImageManager";
 
 const CompatibilitySection = () => {
   const sectionRef = useRef(null);
@@ -13,6 +15,16 @@ const CompatibilitySection = () => {
       transition: { duration: 0.7 }
     }
   };
+
+  // Array of compatibility logos to map through
+  const compatibilityLogos = [
+    { key: 'compatibilityLogo1', number: 1 },
+    { key: 'compatibilityLogo2', number: 2 },
+    { key: 'compatibilityLogo3', number: 3 },
+    { key: 'compatibilityLogo4', number: 4 },
+    { key: 'compatibilityLogo5', number: 5 },
+    { key: 'compatibilityLogo6', number: 6 },
+  ];
 
   return (
     <section id="compatibilidad" className="py-20 bg-[#F5F5DC]" ref={sectionRef}>
@@ -147,12 +159,10 @@ const CompatibilitySection = () => {
                   }
                 }}
               >
-                {[...Array(6)].map((_, idx) => (
-                  <motion.img 
-                    key={idx}
-                    src="/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png" 
-                    alt={`Logo ${idx+1}`} 
-                    className="h-10 object-contain"
+                {compatibilityLogos.map((logo) => (
+                  <motion.div
+                    key={logo.key}
+                    className="relative"
                     variants={{
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0 }
@@ -162,7 +172,16 @@ const CompatibilitySection = () => {
                       rotate: [0, 5, 0], 
                       transition: { duration: 0.5 } 
                     }}
-                  />
+                  >
+                    <ImageManager
+                      src={siteImages[logo.key]}
+                      alt={`Logo compatibilidad ${logo.number}`}
+                      className="h-10 object-contain"
+                    />
+                    <span className="absolute -top-2 -right-2 bg-insight-green text-white w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold">
+                      {logo.number}
+                    </span>
+                  </motion.div>
                 ))}
               </motion.div>
             </div>

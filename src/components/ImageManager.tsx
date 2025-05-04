@@ -99,6 +99,13 @@ export const defaultSiteImages = {
   compatibility: "/lovable-uploads/27a90f52-eb00-4ffd-baf1-e4fe55ae9d2a.png",
   logo: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
   aboutUs: "/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png",
+  // Adding numbered compatibility logos
+  compatibilityLogo1: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  compatibilityLogo2: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  compatibilityLogo3: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  compatibilityLogo4: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  compatibilityLogo5: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  compatibilityLogo6: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
 };
 
 // Función para cargar imágenes desde localStorage si existen
