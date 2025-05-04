@@ -79,19 +79,19 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-1">
           {navItems.map((item) => (
-            <Link key={item.label} to={item.href} className="nav-link">
+            <Link key={item.label} to={item.href} className="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">
               {item.label}
             </Link>
           ))}
           
           {/* Icono de acceso al panel de administración */}
           <Button 
-            variant="ghost" 
+            variant="outline" 
             size="sm" 
             className="ml-2 flex items-center gap-2"
             onClick={handleAdminClick}
           >
-            <Wrench size={18} />
+            <Wrench size={18} className="text-gray-700" />
             <span className="hidden xl:inline">Administración</span>
           </Button>
           
