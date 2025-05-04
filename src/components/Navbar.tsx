@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +11,9 @@ import {
 } from "@/components/ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ImageManager, siteImages } from "./ImageManager";
-import { Settings } from "lucide-react";
+import { Settings, LogIn, LogOut } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "@/components/ui/use-toast";
 
 interface NavItem {
   label: string;
@@ -21,16 +23,13 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "AI Agents", href: "/ai-agents" },
-  { label: "Admin CMS", href: "/admin/cms" },
 ];
-
-interface NavbarProps {
-  isScrolled?: boolean;
-}
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const mobile = useIsMobile();
+  const { isAuthenticated, isAdmin, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +43,15 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleLogout = () => {
+    logout();
+    toast({
+      title: "Sesión cerrada",
+      description: "Has cerrado sesión correctamente",
+    });
+    navigate("/");
+  };
 
   return (
     <header
@@ -72,13 +80,35 @@ const Navbar = () => {
             </Link>
           ))}
           
-          {/* Enlace al panel de administración */}
-          <Link to="/admin/cms" className="ml-2">
-            <Button variant="ghost" size="sm" className="flex items-center gap-2">
-              <Settings size={18} />
-              <span className="hidden xl:inline">Admin</span>
+          {/* Enlace al panel de administración - solo visible para administradores */}
+          {isAdmin && (
+            <Link to="/admin/cms" className="ml-2">
+              <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <Settings size={18} />
+                <span className="hidden xl:inline">Admin</span>
+              </Button>
+            </Link>
+          )}
+          
+          {/* Botón Login/Logout */}
+          {isAuthenticated ? (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="ml-2 flex items-center gap-2"
+              onClick={handleLogout}
+            >
+              <LogOut size={18} />
+              <span className="hidden xl:inline">Salir</span>
             </Button>
-          </Link>
+          ) : (
+            <Link to="/login" className="ml-2">
+              <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <LogIn size={18} />
+                <span className="hidden xl:inline">Entrar</span>
+              </Button>
+            </Link>
+          )}
         </nav>
 
         {/* Mobile Navigation Trigger */}
@@ -114,13 +144,35 @@ const Navbar = () => {
                 </SheetClose>
               ))}
               
-              {/* Enlace al panel de administración en menú móvil */}
-              <SheetClose asChild>
-                <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
-                  <Settings size={20} />
-                  <span>Admin Panel</span>
-                </Link>
-              </SheetClose>
+              {/* Enlace al panel de administración en menú móvil - solo visible para administradores */}
+              {isAdmin && (
+                <SheetClose asChild>
+                  <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
+                    <Settings size={20} />
+                    <span>Admin Panel</span>
+                  </Link>
+                </SheetClose>
+              )}
+              
+              {/* Botón Login/Logout en menú móvil */}
+              {isAuthenticated ? (
+                <SheetClose asChild>
+                  <button 
+                    onClick={handleLogout}
+                    className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors"
+                  >
+                    <LogOut size={20} />
+                    <span>Cerrar Sesión</span>
+                  </button>
+                </SheetClose>
+              ) : (
+                <SheetClose asChild>
+                  <Link to="/login" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
+                    <LogIn size={20} />
+                    <span>Iniciar Sesión</span>
+                  </Link>
+                </SheetClose>
+              )}
             </nav>
           </SheetContent>
         </Sheet>
