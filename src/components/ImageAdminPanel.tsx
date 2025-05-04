@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { ImageManager, siteImages, defaultSiteImages } from "./ImageManager";
+import { ImageManager, siteImages, defaultSiteImages, getImageUrl } from "./ImageManager";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,7 +29,10 @@ const ImageAdminPanel = () => {
       
       for (const [key, url] of Object.entries(imageUrls)) {
         try {
-          const response = await fetch(url);
+          // Asegurarse de que url sea una string válida
+          const imageUrl = typeof url === 'string' ? url : '';
+          
+          const response = await fetch(imageUrl);
           
           if (response.ok) {
             const blob = await response.blob();

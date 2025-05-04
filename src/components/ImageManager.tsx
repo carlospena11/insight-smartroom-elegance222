@@ -64,8 +64,14 @@ export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.
  */
 export const getImageUrl = (imageName: string): string => {
   // Si es una URL de datos (base64), devolverla directamente
-  if (imageName.startsWith('data:')) {
+  if (typeof imageName === 'string' && imageName.startsWith('data:')) {
     return imageName;
+  }
+  
+  // Para manejar valores no string
+  if (typeof imageName !== 'string') {
+    console.error("Error en getImageUrl: imageName no es un string", imageName);
+    return '/placeholder.svg';
   }
   
   // Puedes personalizar esta función para manejar diferentes entornos
