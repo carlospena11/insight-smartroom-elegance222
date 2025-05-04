@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Upload, Image as ImageIcon } from "lucide-react";
+import { Upload, Image as ImageIcon, RefreshCw } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -21,6 +21,36 @@ const ImageAdminPanel = () => {
   const [imageUrls, setImageUrls] = useState({ ...siteImages });
   const [imageDetails, setImageDetails] = useState<Record<string, { format: string; size: string }>>({});
   const [selectedImageKey, setSelectedImageKey] = useState<string | null>(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  // Función para cargar imágenes desde localStorage
+  const loadImagesFromStorage = () => {
+    try {
+      const savedImages = localStorage.getItem("insight-cms-images");
+      if (savedImages) {
+        return JSON.parse(savedImages);
+      }
+    } catch (error) {
+      console.error("Error cargando imágenes desde localStorage:", error);
+    }
+    return defaultSiteImages;
+  };
+
+  // Función para refrescar imágenes
+  const refreshImages = () => {
+    setIsRefreshing(true);
+    const freshImages = loadImagesFromStorage();
+    setImageUrls({ ...freshImages });
+    
+    toast({
+      title: "Imágenes actualizadas",
+      description: "Se ha actualizado la lista de imágenes desde el almacenamiento local",
+    });
+    
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 500);
+  };
 
   useEffect(() => {
     // Obtener detalles de las imágenes al cargar
@@ -153,6 +183,15 @@ const ImageAdminPanel = () => {
           </Button>
           <Button variant="outline" onClick={resetChanges}>
             Restablecer Valores Originales
+          </Button>
+          <Button 
+            variant="secondary" 
+            onClick={refreshImages}
+            disabled={isRefreshing}
+            className="flex items-center gap-2"
+          >
+            <RefreshCw size={16} className={isRefreshing ? "animate-spin" : ""} />
+            Actualizar
           </Button>
         </div>
       </div>
