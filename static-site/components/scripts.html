@@ -67,5 +67,18 @@
         contactForm.reset();
       });
     }
+    
+    // Remove Lovable badge if it exists
+    const removeLovableBadge = () => {
+      const lovableBadgeElements = document.querySelectorAll('[class*="lovable-badge"], [id*="lovable-badge"], [class*="lovable_badge"], [id*="lovable_badge"]');
+      lovableBadgeElements.forEach(element => {
+        element.remove();
+      });
+    };
+    
+    // Execute badge removal on load and periodically to ensure it stays removed
+    removeLovableBadge();
+    setTimeout(removeLovableBadge, 1000);
+    setTimeout(removeLovableBadge, 3000);
   });
 </script>

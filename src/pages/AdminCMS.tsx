@@ -8,10 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
 import LogoEditor from "@/components/LogoEditor";
+import { useToast } from "@/hooks/use-toast";
 
 const AdminCMS = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("images");
+  const { toast } = useToast();
   
   return (
     <div className="min-h-screen bg-white">
@@ -51,4 +53,3 @@ const AdminCMS = () => {
 };
 
 export default AdminCMS;
-
