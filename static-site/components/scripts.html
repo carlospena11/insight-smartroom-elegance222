@@ -33,6 +33,80 @@
       });
     }
     
+    // WhatsApp floating button
+    const addWhatsAppButton = () => {
+      // Try to get WhatsApp number from localStorage
+      let whatsappNumber = "+123 456 7890";
+      try {
+        const contactInfo = localStorage.getItem("insight-contact-info");
+        if (contactInfo) {
+          const parsedInfo = JSON.parse(contactInfo);
+          if (parsedInfo.whatsapp) {
+            whatsappNumber = parsedInfo.whatsapp;
+          }
+        }
+      } catch (error) {
+        console.error("Error loading WhatsApp number:", error);
+      }
+      
+      // Format WhatsApp number for URL
+      const formattedNumber = whatsappNumber.replace(/\s+/g, "").replace(/[^\d+]/g, "");
+      const whatsappUrl = `https://wa.me/${formattedNumber}`;
+      
+      // Create WhatsApp button
+      const whatsappButton = document.createElement('div');
+      whatsappButton.innerHTML = `
+        <div class="whatsapp-button">
+          <div class="whatsapp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(whatsappButton);
+      
+      // Style the button
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .whatsapp-button {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+        .whatsapp-button:hover {
+          transform: scale(1.1);
+        }
+        .whatsapp-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          background-color: #25D366;
+          border-radius: 50%;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .whatsapp-icon svg {
+          width: 30px;
+          height: 30px;
+          color: white;
+        }
+      `;
+      document.head.appendChild(style);
+      
+      // Add click event
+      whatsappButton.addEventListener('click', function() {
+        window.open(whatsappUrl, '_blank');
+      });
+    };
+    
+    // Execute after a short delay to ensure DOM is fully loaded
+    setTimeout(addWhatsAppButton, 1000);
+    
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {

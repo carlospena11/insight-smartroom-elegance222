@@ -12,6 +12,7 @@ import AIAgentsSection from "@/components/AIAgentsSection";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import LoadingScreen from "@/components/LoadingScreen";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -50,6 +51,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <ScrollToTopButton />
+      <WhatsAppButton />
     </div>
   );
 };
