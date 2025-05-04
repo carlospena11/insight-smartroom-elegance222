@@ -10,10 +10,12 @@
     <script>
       window.global = window;
     </script>
-    <link rel="stylesheet" href="./dist/index.css">
+    <!-- In development, Vite serves the CSS from memory, not from disk -->
+    <!-- In production, the CSS will be at /index.css -->
+    <link rel="stylesheet" href="/index.css">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./dist/main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
