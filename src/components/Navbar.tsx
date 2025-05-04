@@ -1,109 +1,130 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { useMobile } from "@/hooks/use-mobile";
+import { ImageManager, siteImages } from "./ImageManager";
+import { Settings } from "lucide-react";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "Inicio", href: "/" },
+  { label: "AI Agents", href: "/ai-agents" },
+  { label: "Admin CMS", href: "/admin/cms" },
+];
+
+interface NavbarProps {
+  isScrolled?: boolean;
+}
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const mobile = useMobile();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 50;
+      setIsScrolled(window.scrollY > scrollThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <div className="text-2xl font-semibold">
-            <span className="text-insight-dark">&lt;</span>
-            <span className="text-insight-dark">insight</span>
-            <span className="text-insight-red">.</span>
-            <span className="text-insight-green">/&gt;</span>
-          </div>
-        </div>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-md py-2"
+          : "bg-transparent py-4"
+      )}
+    >
+      <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <ImageManager
+            src={siteImages.logo}
+            alt="Insight Smart Hotel Logo"
+            className="h-8 w-auto"
+          />
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <a href="#inicio" className="text-insight-dark hover:text-insight-green transition-colors">
-            Inicio
-          </a>
-          <a href="#servicios" className="text-insight-dark hover:text-insight-green transition-colors">
-            Servicios
-          </a>
-          <a href="#caracteristicas" className="text-insight-dark hover:text-insight-green transition-colors">
-            Características
-          </a>
-          <a href="#compatibilidad" className="text-insight-dark hover:text-insight-green transition-colors">
-            Compatibilidad
-          </a>
-          <a href="#nosotros" className="text-insight-dark hover:text-insight-green transition-colors">
-            Nosotros
-          </a>
-          <a href="#contacto" className="text-insight-dark hover:text-insight-green transition-colors">
-            Contacto
-          </a>
-        </div>
+        <nav className="hidden lg:flex items-center space-x-1">
+          {navItems.map((item) => (
+            <Link key={item.label} to={item.href} className="nav-link">
+              {item.label}
+            </Link>
+          ))}
+          
+          {/* Enlace al panel de administración */}
+          <Link to="/admin/cms" className="ml-2">
+            <Button variant="ghost" size="sm" className="flex items-center gap-2">
+              <Settings size={18} />
+              <span className="hidden xl:inline">Admin</span>
+            </Button>
+          </Link>
+        </nav>
 
-        {/* Mobile Navigation Toggle */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="focus:outline-none"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-insight-dark" />
-            ) : (
-              <Menu className="h-6 w-6 text-insight-dark" />
-            )}
-          </button>
-        </div>
+        {/* Mobile Navigation Trigger */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-menu"
+              >
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[85%] sm:w-[350px]">
+            <nav className="flex flex-col gap-4 mt-12">
+              {navItems.map((item) => (
+                <SheetClose asChild key={item.label}>
+                  <Link to={item.href} className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              ))}
+              
+              {/* Enlace al panel de administración en menú móvil */}
+              <SheetClose asChild>
+                <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
+                  <Settings size={20} />
+                  <span>Admin Panel</span>
+                </Link>
+              </SheetClose>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white p-4 shadow-lg absolute w-full">
-          <div className="flex flex-col space-y-4">
-            <a 
-              href="#inicio" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Inicio
-            </a>
-            <a 
-              href="#servicios" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Servicios
-            </a>
-            <a 
-              href="#caracteristicas" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Características
-            </a>
-            <a 
-              href="#compatibilidad" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Compatibilidad
-            </a>
-            <a 
-              href="#nosotros" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Nosotros
-            </a>
-            <a 
-              href="#contacto" 
-              className="text-insight-dark hover:text-insight-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contacto
-            </a>
-          </div>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 };
 
