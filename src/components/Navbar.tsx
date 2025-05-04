@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -8,7 +9,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { ImageManager, siteImages } from "./ImageManager";
 import { Settings } from "lucide-react";
 
@@ -29,7 +30,7 @@ interface NavbarProps {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const mobile = useMobile();
+  const mobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
