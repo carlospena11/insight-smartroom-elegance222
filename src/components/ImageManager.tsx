@@ -80,9 +80,8 @@ export const getImageUrl = (imageName: string): string => {
     : `/${imageName}`; // En desarrollo
 };
 
-// Mapa centralizado de todas las imágenes del sitio
-// Facilita el cambio de imágenes desde un único lugar
-export const siteImages = {
+// Mapa centralizado original de todas las imágenes del sitio
+export const defaultSiteImages = {
   hero: "/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png",
   aiAgent: "/lovable-uploads/8d49e4e4-4a6c-48ee-a777-a5f0f398987b.png",
   guestExperience: "/lovable-uploads/4827b0f3-267c-4c28-b450-53935fa9aeca.png",
@@ -91,5 +90,21 @@ export const siteImages = {
   logo: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
   aboutUs: "/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png",
 };
+
+// Función para cargar imágenes desde localStorage si existen
+const loadImagesFromStorage = () => {
+  try {
+    const savedImages = localStorage.getItem("insight-cms-images");
+    if (savedImages) {
+      return JSON.parse(savedImages);
+    }
+  } catch (error) {
+    console.error("Error cargando imágenes desde localStorage:", error);
+  }
+  return defaultSiteImages;
+};
+
+// Exportar las imágenes cargadas (desde localStorage o valores predeterminados)
+export const siteImages = loadImagesFromStorage();
 
 export default ImageManager;
