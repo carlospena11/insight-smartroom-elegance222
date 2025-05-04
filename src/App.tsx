@@ -25,14 +25,11 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/ai-agents" element={<AIAgents />} />
             <Route path="/login" element={<Login />} />
-            <Route 
-              path="/admin/cms" 
-              element={
-                <ProtectedRoute requireAdmin={true}>
-                  <AdminCMS />
-                </ProtectedRoute>
-              } 
-            />
+            <Route path="/admin/cms" element={
+              <ProtectedRoute requireAdmin={true}>
+                <AdminCMS />
+              </ProtectedRoute>
+            } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
