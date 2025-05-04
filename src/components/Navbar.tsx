@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ImageManager, siteImages } from "./ImageManager";
-import { Settings, LogIn, LogOut } from "lucide-react";
+import { Wrench, LogIn, LogOut } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "@/components/ui/use-toast";
 
@@ -53,6 +53,10 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const handleAdminClick = () => {
+    navigate("/admin/cms");
+  };
+
   return (
     <header
       className={cn(
@@ -80,18 +84,19 @@ const Navbar = () => {
             </Link>
           ))}
           
-          {/* Enlace al panel de administración - solo visible para administradores */}
-          {isAdmin && (
-            <Link to="/admin/cms" className="ml-2">
-              <Button variant="ghost" size="sm" className="flex items-center gap-2">
-                <Settings size={18} />
-                <span className="hidden xl:inline">Admin</span>
-              </Button>
-            </Link>
-          )}
+          {/* Icono de acceso al panel de administración */}
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="ml-2 flex items-center gap-2"
+            onClick={handleAdminClick}
+          >
+            <Wrench size={18} />
+            <span className="hidden xl:inline">Administración</span>
+          </Button>
           
-          {/* Botón Login/Logout */}
-          {isAuthenticated ? (
+          {/* Botón Login/Logout - Solo mostrar si está autenticado */}
+          {isAuthenticated && (
             <Button 
               variant="ghost" 
               size="sm" 
@@ -101,13 +106,6 @@ const Navbar = () => {
               <LogOut size={18} />
               <span className="hidden xl:inline">Salir</span>
             </Button>
-          ) : (
-            <Link to="/login" className="ml-2">
-              <Button variant="ghost" size="sm" className="flex items-center gap-2">
-                <LogIn size={18} />
-                <span className="hidden xl:inline">Entrar</span>
-              </Button>
-            </Link>
           )}
         </nav>
 
@@ -144,18 +142,16 @@ const Navbar = () => {
                 </SheetClose>
               ))}
               
-              {/* Enlace al panel de administración en menú móvil - solo visible para administradores */}
-              {isAdmin && (
-                <SheetClose asChild>
-                  <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
-                    <Settings size={20} />
-                    <span>Admin Panel</span>
-                  </Link>
-                </SheetClose>
-              )}
+              {/* Enlace al panel de administración en menú móvil */}
+              <SheetClose asChild>
+                <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
+                  <Wrench size={20} />
+                  <span>Administración</span>
+                </Link>
+              </SheetClose>
               
-              {/* Botón Login/Logout en menú móvil */}
-              {isAuthenticated ? (
+              {/* Botón Logout en menú móvil - Solo mostrar si está autenticado */}
+              {isAuthenticated && (
                 <SheetClose asChild>
                   <button 
                     onClick={handleLogout}
@@ -164,13 +160,6 @@ const Navbar = () => {
                     <LogOut size={20} />
                     <span>Cerrar Sesión</span>
                   </button>
-                </SheetClose>
-              ) : (
-                <SheetClose asChild>
-                  <Link to="/login" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
-                    <LogIn size={20} />
-                    <span>Iniciar Sesión</span>
-                  </Link>
                 </SheetClose>
               )}
             </nav>
