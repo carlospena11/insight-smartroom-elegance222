@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
 import LogoEditor from "@/components/LogoEditor";
+import ContactInfoEditor from "@/components/ContactInfoEditor";
 import { useToast } from "@/hooks/use-toast";
 
 const AdminCMS = () => {
@@ -17,9 +18,13 @@ const AdminCMS = () => {
   
   const handleTabChange = (value: string) => {
     setActiveTab(value);
+    let tabName = "Imágenes";
+    if (value === "logo") tabName = "Logo";
+    if (value === "contact") tabName = "Contacto";
+
     toast({
       title: `Pestaña cambiada`,
-      description: `Ahora estás en la sección de ${value === 'images' ? 'Imágenes' : 'Logo'}`,
+      description: `Ahora estás en la sección de ${tabName}`,
     });
   };
   
@@ -43,6 +48,7 @@ const AdminCMS = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="images">Imágenes del Sitio</TabsTrigger>
               <TabsTrigger value="logo">Logo</TabsTrigger>
+              <TabsTrigger value="contact">Contacto y Redes</TabsTrigger>
             </TabsList>
             
             <TabsContent value="images">
@@ -51,6 +57,10 @@ const AdminCMS = () => {
             
             <TabsContent value="logo">
               <LogoEditor />
+            </TabsContent>
+
+            <TabsContent value="contact">
+              <ContactInfoEditor />
             </TabsContent>
           </Tabs>
         </div>

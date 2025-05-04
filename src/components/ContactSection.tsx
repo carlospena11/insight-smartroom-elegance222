@@ -1,6 +1,13 @@
+
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface ContactInfo {
+  email: string;
+  phone: string;
+  address: string;
+}
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -8,6 +15,24 @@ const ContactSection = () => {
     email: "",
     message: ""
   });
+  
+  const [contactInfo, setContactInfo] = useState<ContactInfo>({
+    email: "info@insight-smartroom.com",
+    phone: "+123 456 7890",
+    address: "Avenida Principal 123, Ciudad"
+  });
+
+  useEffect(() => {
+    // Load contact info from localStorage if available
+    try {
+      const savedInfo = localStorage.getItem("insight-contact-info");
+      if (savedInfo) {
+        setContactInfo(JSON.parse(savedInfo));
+      }
+    } catch (error) {
+      console.error("Error loading contact info:", error);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -78,7 +103,7 @@ const ContactSection = () => {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <Mail className="w-5 h-5 mr-3 text-insight-green" />
-                  <span>info@insight-smartroom.com</span>
+                  <span>{contactInfo.email}</span>
                 </motion.div>
                 
                 <motion.div 
@@ -87,7 +112,7 @@ const ContactSection = () => {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <Phone className="w-5 h-5 mr-3 text-insight-green" />
-                  <span>+123 456 7890</span>
+                  <span>{contactInfo.phone}</span>
                 </motion.div>
                 
                 <motion.div 
@@ -96,7 +121,7 @@ const ContactSection = () => {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <MapPin className="w-5 h-5 mr-3 text-insight-green" />
-                  <span>Avenida Principal 123, Ciudad</span>
+                  <span>{contactInfo.address}</span>
                 </motion.div>
               </div>
             </motion.div>
