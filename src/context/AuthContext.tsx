@@ -49,8 +49,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // Función simple de login - en producción usarías un backend real
   const login = (username: string, password: string): boolean => {
     // En un entorno real esto se haría contra un backend seguro
-    // Por ahora tenemos un usuario "admin" hardcodeado con contraseña "admin123"
-    if (username === 'admin' && password === 'admin123') {
+    // Usando las nuevas credenciales: usuario: cpena y password: Merida12345
+    if (username === 'cpena' && password === 'Merida12345') {
       const newUser = { username, isAdmin: true };
       setUser(newUser);
       localStorage.setItem('insight-user', JSON.stringify(newUser));
