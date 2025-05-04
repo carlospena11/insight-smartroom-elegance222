@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -7,6 +7,7 @@ interface ContactInfo {
   email: string;
   phone: string;
   address: string;
+  whatsapp: string;
 }
 
 const ContactSection = () => {
@@ -19,7 +20,8 @@ const ContactSection = () => {
   const [contactInfo, setContactInfo] = useState<ContactInfo>({
     email: "info@insight-smartroom.com",
     phone: "+123 456 7890",
-    address: "Avenida Principal 123, Ciudad"
+    address: "Avenida Principal 123, Ciudad",
+    whatsapp: "+123 456 7890"
   });
 
   useEffect(() => {
@@ -113,6 +115,15 @@ const ContactSection = () => {
                 >
                   <Phone className="w-5 h-5 mr-3 text-insight-green" />
                   <span>{contactInfo.phone}</span>
+                </motion.div>
+                
+                <motion.div 
+                  className="flex items-center"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <MessageSquare className="w-5 h-5 mr-3 text-insight-green" />
+                  <span>WhatsApp: {contactInfo.whatsapp}</span>
                 </motion.div>
                 
                 <motion.div 

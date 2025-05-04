@@ -1,12 +1,13 @@
 
 import React from "react";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, MessageSquare } from "lucide-react";
 import { ImageManager, siteImages } from "./ImageManager";
 
 interface ContactInfo {
   email: string;
   phone: string;
   address: string;
+  whatsapp: string;
 }
 
 interface SocialLinks {
@@ -15,6 +16,7 @@ interface SocialLinks {
   instagram: string;
   linkedin: string;
   youtube: string;
+  whatsapp: string;
 }
 
 const Footer = () => {
@@ -23,6 +25,7 @@ const Footer = () => {
     email: "info@insight-smartroom.com",
     phone: "+123 456 7890",
     address: "Avenida Principal 123, Ciudad",
+    whatsapp: "+123 456 7890",
   };
 
   // Default social media links
@@ -32,6 +35,7 @@ const Footer = () => {
     instagram: "https://instagram.com",
     linkedin: "https://linkedin.com",
     youtube: "https://youtube.com",
+    whatsapp: "https://wa.me/123456789",
   };
 
   // Load contact info from localStorage or use default
@@ -98,6 +102,11 @@ const Footer = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
               )}
+              {socialLinks.whatsapp && (
+                <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  <MessageSquare className="w-5 h-5" />
+                </a>
+              )}
             </div>
           </div>
           
@@ -129,6 +138,7 @@ const Footer = () => {
               <li className="text-gray-300">{contactInfo.email}</li>
               <li className="text-gray-300">{contactInfo.phone}</li>
               <li className="text-gray-300">{contactInfo.address}</li>
+              <li className="text-gray-300">WhatsApp: {contactInfo.whatsapp}</li>
             </ul>
           </div>
         </div>

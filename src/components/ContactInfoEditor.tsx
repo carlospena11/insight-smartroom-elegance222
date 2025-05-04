@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Save, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Save, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube, MessageSquare } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -29,6 +29,7 @@ const contactFormSchema = z.object({
   email: z.string().email("Correo inválido"),
   phone: z.string().min(1, "El teléfono es requerido"),
   address: z.string().min(1, "La dirección es requerida"),
+  whatsapp: z.string().min(1, "El número de WhatsApp es requerido"),
 });
 
 // Schema for social media links
@@ -38,6 +39,7 @@ const socialFormSchema = z.object({
   instagram: z.string().url("URL de Instagram inválida").or(z.literal("")),
   linkedin: z.string().url("URL de LinkedIn inválida").or(z.literal("")),
   youtube: z.string().url("URL de YouTube inválida").or(z.literal("")),
+  whatsapp: z.string().url("URL de WhatsApp inválida").or(z.literal("")),
 });
 
 // Default contact information
@@ -45,6 +47,7 @@ const defaultContactInfo = {
   email: "info@insight-smartroom.com",
   phone: "+123 456 7890",
   address: "Avenida Principal 123, Ciudad",
+  whatsapp: "+123 456 7890",
 };
 
 // Default social media links
@@ -54,6 +57,7 @@ const defaultSocialLinks = {
   instagram: "https://instagram.com",
   linkedin: "https://linkedin.com",
   youtube: "https://youtube.com",
+  whatsapp: "https://wa.me/123456789",
 };
 
 const ContactInfoEditor = () => {
@@ -192,6 +196,22 @@ const ContactInfoEditor = () => {
                   
                   <FormField
                     control={contactForm.control}
+                    name="whatsapp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <MessageSquare className="h-4 w-4" /> WhatsApp
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} placeholder="+123 456 7890" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={contactForm.control}
                     name="address"
                     render={({ field }) => (
                       <FormItem>
@@ -284,6 +304,38 @@ const ContactInfoEditor = () => {
                         </FormLabel>
                         <FormControl>
                           <Input {...field} placeholder="https://linkedin.com/company/tu-empresa" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={socialForm.control}
+                    name="whatsapp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <MessageSquare className="h-4 w-4" /> WhatsApp
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} placeholder="https://wa.me/123456789" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={socialForm.control}
+                    name="youtube"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="flex items-center gap-2">
+                          <Youtube className="h-4 w-4" /> YouTube
+                        </FormLabel>
+                        <FormControl>
+                          <Input {...field} placeholder="https://youtube.com/channel/tu-canal" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
