@@ -23,6 +23,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "AI Agents", href: "/ai-agents" },
+  { label: "Características", href: "/#features" },
+  { label: "Experiencia", href: "/#guest-experience" },
+  { label: "Nosotros", href: "/#about" },
+  { label: "Contacto", href: "/#contact" },
 ];
 
 const Navbar = () => {
