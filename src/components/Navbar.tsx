@@ -96,7 +96,7 @@ const Navbar = () => {
             onClick={handleAdminClick}
           >
             <Wrench size={18} className="text-gray-700" />
-            <span className="hidden xl:inline">Clientes</span>
+            <span className="hidden xl:inline">Administración</span>
           </Button>
           
           {/* Botón Login/Logout - Solo mostrar si está autenticado */}
@@ -150,7 +150,7 @@ const Navbar = () => {
               <SheetClose asChild>
                 <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
                   <Wrench size={20} />
-                  <span>Clientes</span>
+                  <span>Administración</span>
                 </Link>
               </SheetClose>
               
