@@ -63,8 +63,12 @@ export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.
  * Centraliza la gestión de rutas de imágenes
  */
 export const getImageUrl = (imageName: string): string => {
+  // Si es una URL de datos (base64), devolverla directamente
+  if (imageName.startsWith('data:')) {
+    return imageName;
+  }
+  
   // Puedes personalizar esta función para manejar diferentes entornos
-  // Por ejemplo, usar una CDN en producción
   const isProduction = window.location.hostname !== "localhost";
   
   // Imágenes alojadas en lovable-uploads
