@@ -143,23 +143,45 @@
     
     // Remove Lovable badge if it exists
     const removeLovableBadge = () => {
-      const lovableBadgeElements = document.querySelectorAll('[class*="lovable-badge"], [id*="lovable-badge"], [class*="lovable_badge"], [id*="lovable_badge"], [class*="gpt-badge"], [id*="gpt-badge"]');
+      // Selecciona todos los elementos que podrían ser el badge de Lovable
+      const lovableBadgeElements = document.querySelectorAll(
+        '[class*="lovable"], [id*="lovable"], [class*="gpt"], [id*="gpt"], ' +
+        '[class*="Lovable"], [id*="Lovable"], [class*="GPT"], [id*="GPT"], ' +
+        '[class*="lovable-badge"], [id*="lovable-badge"], ' +
+        '[class*="lovable_badge"], [id*="lovable_badge"], ' +
+        '[class*="gpt-badge"], [id*="gpt-badge"]'
+      );
+      
+      // Elimina todos los elementos encontrados
       lovableBadgeElements.forEach(element => {
         element.remove();
       });
       
-      // También eliminar cualquier elemento con estilos o clases que contengan lovable
+      // También eliminar cualquier elemento con estilos o clases que contengan lovable o gpt
       document.querySelectorAll('*').forEach(el => {
-        if (el.className && typeof el.className === 'string' && (el.className.includes('lovable') || el.className.includes('gpt'))) {
+        if (el.className && typeof el.className === 'string' && 
+           (el.className.toLowerCase().includes('lovable') || 
+            el.className.toLowerCase().includes('gpt'))) {
           el.remove();
+        }
+      });
+      
+      // Eliminar posibles iframes o elementos insertados dinámicamente
+      document.querySelectorAll('iframe').forEach(iframe => {
+        if (iframe.src && (
+            iframe.src.toLowerCase().includes('lovable') || 
+            iframe.src.toLowerCase().includes('gpt')
+          )) {
+          iframe.remove();
         }
       });
     };
     
     // Execute badge removal on load and periodically to ensure it stays removed
     removeLovableBadge();
+    setTimeout(removeLovableBadge, 500);
     setTimeout(removeLovableBadge, 1000);
     setTimeout(removeLovableBadge, 3000);
-    setInterval(removeLovableBadge, 10000); // Revisar cada 10 segundos
+    setInterval(removeLovableBadge, 5000); // Revisar cada 5 segundos
   });
 </script>
