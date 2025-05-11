@@ -1,4 +1,3 @@
-
 <script>
   // Simple JavaScript para la funcionalidad básica
   document.addEventListener('DOMContentLoaded', function() {
@@ -144,9 +143,16 @@
     
     // Remove Lovable badge if it exists
     const removeLovableBadge = () => {
-      const lovableBadgeElements = document.querySelectorAll('[class*="lovable-badge"], [id*="lovable-badge"], [class*="lovable_badge"], [id*="lovable_badge"]');
+      const lovableBadgeElements = document.querySelectorAll('[class*="lovable-badge"], [id*="lovable-badge"], [class*="lovable_badge"], [id*="lovable_badge"], [class*="gpt-badge"], [id*="gpt-badge"]');
       lovableBadgeElements.forEach(element => {
         element.remove();
+      });
+      
+      // También eliminar cualquier elemento con estilos o clases que contengan lovable
+      document.querySelectorAll('*').forEach(el => {
+        if (el.className && typeof el.className === 'string' && (el.className.includes('lovable') || el.className.includes('gpt'))) {
+          el.remove();
+        }
       });
     };
     
@@ -154,5 +160,6 @@
     removeLovableBadge();
     setTimeout(removeLovableBadge, 1000);
     setTimeout(removeLovableBadge, 3000);
+    setInterval(removeLovableBadge, 10000); // Revisar cada 10 segundos
   });
 </script>
