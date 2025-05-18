@@ -1,3 +1,4 @@
+
 .navbar {
   position: fixed;
   top: 0;
@@ -19,11 +20,19 @@
 .logo {
   display: flex;
   align-items: center;
+  margin-right: 2rem; /* Added more space to the right of the logo */
 }
 
-.logo-text {
-  font-size: 1.5rem;
+.logo-image {
+  height: 40px; /* Increased logo size */
+  width: auto;
+  margin-right: 10px;
+}
+
+.company-name {
+  font-size: 1.25rem;
   font-weight: 600;
+  color: var(--color-dark);
 }
 
 .desktop-nav {
@@ -86,4 +95,15 @@
 
 .mobile-nav.active {
   display: block;
+}
+
+/* Responsive adjustments for logo area */
+@media (max-width: 768px) {
+  .logo-image {
+    height: 36px; /* Slightly smaller on mobile but still larger than before */
+  }
+  
+  .company-name {
+    font-size: 1.1rem;
+  }
 }

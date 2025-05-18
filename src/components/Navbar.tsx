@@ -73,11 +73,12 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <ImageManager
-            src={siteImages.logo}
-            alt="Smart Room Logo"
-            className="h-8 w-auto"
+          <img 
+            src="/lovable-uploads/84016e1b-263c-4f00-aae5-a2662e1d3d11.png" 
+            alt="SmartRoom Logo" 
+            className="h-10 w-auto mr-3" 
           />
+          <span className="text-lg font-semibold text-gray-800">Adirem</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -138,6 +139,15 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-[85%] sm:w-[350px]">
             <nav className="flex flex-col gap-4 mt-12">
+              <div className="flex items-center mb-6">
+                <img 
+                  src="/lovable-uploads/84016e1b-263c-4f00-aae5-a2662e1d3d11.png" 
+                  alt="SmartRoom Logo" 
+                  className="h-8 w-auto mr-3" 
+                />
+                <span className="text-lg font-semibold">Adirem</span>
+              </div>
+              
               {navItems.map((item) => (
                 <SheetClose asChild key={item.label}>
                   <Link to={item.href} className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">

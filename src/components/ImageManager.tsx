@@ -97,7 +97,7 @@ export const defaultSiteImages = {
   guestExperience: "/lovable-uploads/4827b0f3-267c-4c28-b450-53935fa9aeca.png",
   smartRoom: "/lovable-uploads/d910afa8-d8a5-4cee-83d3-4cd37e6a3997.png",
   compatibility: "/lovable-uploads/27a90f52-eb00-4ffd-baf1-e4fe55ae9d2a.png",
-  logo: "/lovable-uploads/6c1308e9-e397-458a-80e4-bfab0f2e17c7.png",
+  logo: "/lovable-uploads/84016e1b-263c-4f00-aae5-a2662e1d3d11.png", // Updated to new logo
   aboutUs: "/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png",
   // Adding numbered compatibility logos
   compatibilityLogo1: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",

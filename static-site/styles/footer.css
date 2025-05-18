@@ -1,3 +1,4 @@
+
 .footer {
   background-color: var(--color-dark);
   color: rgba(255, 255, 255, 0.8);
@@ -16,6 +17,14 @@
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-image {
+  height: 30px;
+  width: auto;
 }
 
 .footer-social {
