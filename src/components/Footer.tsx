@@ -41,7 +41,7 @@ const Footer = () => {
   // Load contact info from localStorage or use default
   const getContactInfo = (): ContactInfo => {
     try {
-      const savedInfo = localStorage.getItem("insight-contact-info");
+      const savedInfo = localStorage.getItem("adirem-contact-info");
       if (savedInfo) {
         return JSON.parse(savedInfo);
       }
@@ -54,7 +54,7 @@ const Footer = () => {
   // Load social links from localStorage or use default
   const getSocialLinks = (): SocialLinks => {
     try {
-      const savedLinks = localStorage.getItem("insight-social-links");
+      const savedLinks = localStorage.getItem("adirem-social-links");
       if (savedLinks) {
         return JSON.parse(savedLinks);
       }
@@ -68,7 +68,7 @@ const Footer = () => {
   const socialLinks = getSocialLinks();
 
   return (
-    <footer className="bg-insight-dark text-white py-12">
+    <footer className="bg-adirem-dark text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">

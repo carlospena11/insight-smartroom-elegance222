@@ -1,3 +1,4 @@
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Award, Users, Lightbulb } from "lucide-react";
@@ -65,7 +66,7 @@ const AboutUsSection = () => {
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute -top-20 -right-20 w-64 h-64 bg-insight-green/5 rounded-full blur-3xl"
+          className="absolute -top-20 -right-20 w-64 h-64 bg-adirem-green/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
@@ -77,7 +78,7 @@ const AboutUsSection = () => {
           }}
         />
         <motion.div 
-          className="absolute -bottom-32 -left-20 w-72 h-72 bg-insight-red/5 rounded-full blur-3xl"
+          className="absolute -bottom-32 -left-20 w-72 h-72 bg-adirem-red/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.2, 0.4]
@@ -98,8 +99,8 @@ const AboutUsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-insight-dark mb-4">Sobre Insight</h2>
-          <div className="w-20 h-1 bg-insight-green mx-auto mb-6"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-adirem-dark mb-4">Sobre Adirem</h2>
+          <div className="w-20 h-1 bg-adirem-green mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Transformamos la experiencia hotelera con soluciones tecnológicas innovadoras
           </p>
@@ -121,7 +122,7 @@ const AboutUsSection = () => {
               className="rounded-lg shadow-xl w-full"
             />
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-insight-green/10 to-transparent rounded-lg"
+              className="absolute inset-0 bg-gradient-to-r from-adirem-green/10 to-transparent rounded-lg"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -133,13 +134,13 @@ const AboutUsSection = () => {
               transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
               whileHover={{ scale: 1.1, backgroundColor: "rgba(140, 209, 79, 0.1)" }}
             >
-              <span className="text-insight-dark font-bold">Experiencia intuitiva</span>
+              <span className="text-adirem-dark font-bold">Experiencia intuitiva</span>
             </motion.div>
           </motion.div>
           
           <motion.div style={{ y: textY }}>
             <motion.h3 
-              className="text-2xl font-bold text-insight-dark mb-6"
+              className="text-2xl font-bold text-adirem-dark mb-6"
               variants={itemVariants}
             >
               Líderes en soluciones Hospitality
@@ -149,7 +150,7 @@ const AboutUsSection = () => {
               className="text-gray-600 mb-6"
               variants={itemVariants}
             >
-              En insight, somos líderes en el desarrollo de soluciones tecnológicas avanzadas para el sector Hospitality. Nos especializamos en crear aplicaciones innovadoras y sistemas de conectividad que transforman la experiencia de los huéspedes.
+              En Adirem, somos líderes en el desarrollo de soluciones tecnológicas avanzadas para el sector Hospitality. Nos especializamos en crear aplicaciones innovadoras y sistemas de conectividad que transforman la experiencia de los huéspedes.
             </motion.p>
             
             <motion.p 
@@ -188,7 +189,7 @@ const AboutUsSection = () => {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <motion.div 
-                    className="w-12 h-12 bg-insight-green/10 rounded-full flex items-center justify-center mx-auto mb-3"
+                    className="w-12 h-12 bg-adirem-green/10 rounded-full flex items-center justify-center mx-auto mb-3"
                     whileHover={{ 
                       rotate: [0, 10, -10, 0],
                       scale: 1.1,
@@ -196,9 +197,9 @@ const AboutUsSection = () => {
                     }}
                     transition={{ duration: 0.5 }}
                   >
-                    <card.icon className="w-6 h-6 text-insight-green" />
+                    <card.icon className="w-6 h-6 text-adirem-green" />
                   </motion.div>
-                  <h4 className="font-semibold text-insight-dark mb-1">{card.title}</h4>
+                  <h4 className="font-semibold text-adirem-dark mb-1">{card.title}</h4>
                   <p className="text-gray-600 text-sm">{card.description}</p>
                 </motion.div>
               ))}

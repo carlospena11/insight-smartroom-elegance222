@@ -38,7 +38,7 @@ export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.
     <div className={`relative ${isLoading ? 'bg-gray-200 animate-pulse' : ''}`}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-insight-green border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-4 border-adirem-green border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
       <img
@@ -111,7 +111,7 @@ export const defaultSiteImages = {
 // Función para cargar imágenes desde localStorage si existen
 const loadImagesFromStorage = () => {
   try {
-    const savedImages = localStorage.getItem("insight-cms-images");
+    const savedImages = localStorage.getItem("adirem-cms-images");
     if (savedImages) {
       return JSON.parse(savedImages);
     }

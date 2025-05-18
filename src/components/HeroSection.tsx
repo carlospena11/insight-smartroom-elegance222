@@ -62,7 +62,7 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-insight-green/5 rounded-full blur-3xl"
+          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-adirem-green/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
@@ -74,7 +74,7 @@ const HeroSection = () => {
           }}
         />
         <motion.div 
-          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-insight-red/5 rounded-full blur-3xl"
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-adirem-red/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.2, 0.4]
@@ -88,7 +88,7 @@ const HeroSection = () => {
         
         {/* Floating elements in background */}
         <motion.div
-          className="absolute top-[20%] left-[15%] w-8 h-8 bg-insight-green/10 rounded-full"
+          className="absolute top-[20%] left-[15%] w-8 h-8 bg-adirem-green/10 rounded-full"
           animate={{
             y: [0, -15, 0],
             opacity: [0.5, 0.8, 0.5]
@@ -100,7 +100,7 @@ const HeroSection = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-[25%] right-[10%] w-6 h-6 bg-insight-red/10 rounded-full"
+          className="absolute bottom-[25%] right-[10%] w-6 h-6 bg-adirem-red/10 rounded-full"
           animate={{
             y: [0, 20, 0],
             opacity: [0.3, 0.6, 0.3]
@@ -124,10 +124,10 @@ const HeroSection = () => {
             animate="visible"
           >
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-insight-dark mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-adirem-dark mb-4"
               variants={itemVariants}
             >
-              Soluciones <span className="text-insight-green relative">
+              Soluciones <span className="text-adirem-green relative">
                 SmartRoom
                 <motion.span 
                   className="absolute -top-6 -right-8 text-yellow-400"
@@ -159,7 +159,7 @@ const HeroSection = () => {
             >
               <motion.a 
                 href="#servicios" 
-                className="group px-6 py-3 bg-insight-green text-white font-semibold rounded-md transition-all shadow-md relative overflow-hidden"
+                className="group px-6 py-3 bg-adirem-green text-white font-semibold rounded-md transition-all shadow-md relative overflow-hidden"
                 variants={buttonVariants}
                 initial="rest"
                 whileHover="hover"
@@ -189,7 +189,7 @@ const HeroSection = () => {
               
               <motion.a 
                 href="#contacto" 
-                className="px-6 py-3 bg-white text-insight-dark font-semibold rounded-md border border-insight-dark hover:bg-insight-dark hover:text-white transition-all flex items-center justify-center"
+                className="px-6 py-3 bg-white text-adirem-dark font-semibold rounded-md border border-adirem-dark hover:bg-adirem-dark hover:text-white transition-all flex items-center justify-center"
                 variants={buttonVariants}
                 initial="rest"
                 whileHover="hover"
@@ -214,7 +214,7 @@ const HeroSection = () => {
             >
               <img 
                 src="/lovable-uploads/c945a5a8-5382-4f39-8400-1511bec5245e.png" 
-                alt="Insight SmartRoom Interface" 
+                alt="Adirem SmartRoom Interface" 
                 className="rounded-lg shadow-2xl mx-auto"
               />
               <motion.div 
@@ -230,11 +230,11 @@ const HeroSection = () => {
                 transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
               >
                 <motion.div 
-                  className="text-insight-dark font-semibold flex items-center"
+                  className="text-adirem-dark font-semibold flex items-center"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <span className="text-insight-green mr-2">+</span> Interfaz Intuitiva
+                  <span className="text-adirem-green mr-2">+</span> Interfaz Intuitiva
                 </motion.div>
               </motion.div>
             </motion.div>
