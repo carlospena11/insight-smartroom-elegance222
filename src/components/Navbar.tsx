@@ -71,13 +71,14 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo with reduced size */}
+        {/* Logo with increased size (10% larger than the previous 65%) */}
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
             alt="Smart Room Logo"
-            className="h-auto w-auto max-h-[40px]" 
-            style={{ width: "65%" }}  // Using style prop instead of width attribute
+            className="h-auto w-auto max-h-[44px]" 
+            // 65% + 10% = 71.5% (approximately)
+            width="71.5%"
           />
         </Link>
 

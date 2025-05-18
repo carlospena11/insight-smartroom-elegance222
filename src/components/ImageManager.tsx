@@ -5,6 +5,7 @@ type ImageProps = {
   src: string;
   alt: string;
   className?: string;
+  width?: string;
   fallbackSrc?: string;
 }
 
@@ -12,7 +13,7 @@ type ImageProps = {
  * Componente para gestionar imágenes con fallback y carga optimizada
  * Útil para cambiar imágenes fácilmente en todo el sitio
  */
-export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.svg" }: ImageProps) => {
+export const ImageManager = ({ src, alt, className, width, fallbackSrc = "/placeholder.svg" }: ImageProps) => {
   const [imgSrc, setImgSrc] = useState<string>(src);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
@@ -45,9 +46,10 @@ export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.
         src={imgSrc}
         alt={alt}
         className={className}
+        style={width ? { width } : undefined}
         onLoad={handleImageLoad}
         onError={handleImageError}
-        style={{ opacity: isLoading ? 0 : 1 }}
+        loading="lazy"
       />
       {hasError && (
         <div className="absolute bottom-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
