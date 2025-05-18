@@ -20,7 +20,7 @@
 }
 
 .footer-logo img {
-  width: 130%; /* Increased by 30% */
+  width: 65%; /* Reduced to 65% (50% smaller from the previous 130%) */
   height: auto;
   max-width: 180px; /* Ensure it's not too wide */
 }

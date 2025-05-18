@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -71,13 +70,14 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo with increased size */}
+        {/* Logo with reduced size */}
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
             alt="Smart Room Logo"
             className="h-auto w-auto" 
-            style={{ width: "130%", maxHeight: "40px" }}
+            width="65%"
+            maxHeight="40px"
           />
         </Link>
 
