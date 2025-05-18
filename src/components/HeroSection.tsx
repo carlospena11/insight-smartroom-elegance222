@@ -1,3 +1,4 @@
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Zap, Star } from "lucide-react";
 import { useRef } from "react";
@@ -143,7 +144,9 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-adirem-dark mb-4"
               variants={itemVariants}
             >
-              Soluciones <span className="text-adirem-green relative inline-flex items-center">
+              Soluciones <span className="text-sm md:text-base lg:text-lg text-adirem-dark relative inline-flex items-center">
+                para hoteles
+              </span> <span className="text-adirem-green relative inline-flex items-center">
                 <img 
                   src="/lovable-uploads/4e05bd4d-c863-47c3-98a2-4459683c8d14.png" 
                   alt="SmartRoom Logo" 
@@ -163,7 +166,7 @@ const HeroSection = () => {
                 >
                   <Star className="w-6 h-6 fill-current" />
                 </motion.span>
-              </span> para hoteles
+              </span>
             </motion.h1>
             
             <motion.p 
