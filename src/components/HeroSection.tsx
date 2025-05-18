@@ -1,6 +1,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Zap, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useRef } from "react";
 import { ImageManager } from "./ImageManager";
 
@@ -41,35 +41,7 @@ const HeroSection = () => {
     }
   };
 
-  const buttonPrimaryVariants = {
-    rest: { scale: 1, y: 0 },
-    hover: { 
-      scale: 1.02,
-      y: -4,
-      boxShadow: "0 8px 16px rgba(140, 209, 79, 0.3)",
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 10 
-      }
-    },
-    tap: { scale: 0.98, y: 0 }
-  };
-
-  const buttonSecondaryVariants = {
-    rest: { scale: 1, y: 0 },
-    hover: { 
-      scale: 1.02,
-      y: -4,
-      boxShadow: "0 8px 16px rgba(26, 31, 44, 0.2)",
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 10 
-      }
-    },
-    tap: { scale: 0.98, y: 0 }
-  };
+  // Note: Removed the button animation variants since we're removing the buttons
 
   return (
     <section 
@@ -180,51 +152,7 @@ const HeroSection = () => {
               Transformamos la experiencia del huésped con tecnología inteligente y personalizada para el sector Hospitality.
             </motion.p>
             
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
-              variants={itemVariants}
-            >
-              <motion.a 
-                href="#servicios" 
-                className="group px-6 py-3 bg-adirem-green text-white font-semibold rounded-md shadow-md flex items-center justify-center"
-                variants={buttonPrimaryVariants}
-                initial="rest"
-                whileHover="hover"
-                whileTap="tap"
-              >
-                <span className="relative z-10 flex items-center justify-center">
-                  Nuestros Servicios
-                  <motion.span 
-                    className="ml-2"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ 
-                      duration: 1.5, 
-                      repeat: Infinity,
-                      repeatType: "reverse"
-                    }}
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.span>
-                </span>
-                <motion.span 
-                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity rounded-md"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.7 }}
-                />
-              </motion.a>
-              
-              <motion.a 
-                href="#contacto" 
-                className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-900 transition-colors flex items-center justify-center"
-                variants={buttonSecondaryVariants}
-                initial="rest"
-                whileHover="hover"
-                whileTap="tap"
-              >
-                <Zap className="w-5 h-5 mr-2" /> Contactar
-              </motion.a>
-            </motion.div>
+            {/* Removed the buttons that were here */}
           </motion.div>
           
           <motion.div 
