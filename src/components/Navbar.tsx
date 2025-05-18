@@ -71,12 +71,13 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo */}
+        {/* Logo with increased size */}
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
             alt="Smart Room Logo"
-            className="h-8 w-auto"
+            className="h-auto w-auto" 
+            style={{ width: "130%", maxHeight: "40px" }}
           />
         </Link>
 
