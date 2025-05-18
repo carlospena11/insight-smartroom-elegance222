@@ -1,3 +1,4 @@
+
 .navbar {
   position: fixed;
   top: 0;
@@ -19,6 +20,13 @@
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
 }
 
 .logo-text {

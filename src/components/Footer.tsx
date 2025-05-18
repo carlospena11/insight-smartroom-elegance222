@@ -22,7 +22,7 @@ interface SocialLinks {
 const Footer = () => {
   // Default contact information
   const defaultContactInfo = {
-    email: "info@insight-smartroom.com",
+    email: "info@adirem.es",
     phone: "+123 456 7890",
     address: "Avenida Principal 123, Ciudad",
     whatsapp: "+123 456 7890",
@@ -72,11 +72,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <div className="text-2xl font-semibold mb-4">
-              <span className="text-white">&lt;</span>
-              <span className="text-white">insight</span>
-              <span className="text-insight-red">.</span>
-              <span className="text-insight-green">/&gt;</span>
+            <div className="flex items-center mb-4">
+              <ImageManager
+                src={siteImages.logo}
+                alt="Adirem Logo"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-gray-300 mb-4">
               Soluciones tecnológicas para el sector Hospitality.
@@ -144,7 +145,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Insight. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Adirem. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
