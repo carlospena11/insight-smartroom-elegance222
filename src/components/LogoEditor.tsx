@@ -9,9 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Upload, Image as ImageIcon, RefreshCw } from "lucide-react";
 
 const LogoEditor = () => {
-  const [logoUrl, setLogoUrl] = useState(siteImages.logo);
-  const [originalLogoUrl, setOriginalLogoUrl] = useState(siteImages.logo);
-  const [previewUrl, setPreviewUrl] = useState(siteImages.logo);
+  const [logoUrl, setLogoUrl] = useState(siteImages.companyLogo);
+  const [originalLogoUrl, setOriginalLogoUrl] = useState(siteImages.companyLogo);
+  const [previewUrl, setPreviewUrl] = useState(siteImages.companyLogo);
   const [logoDetails, setLogoDetails] = useState<{ format: string; size: string }>({ format: '', size: '' });
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -96,7 +96,7 @@ const LogoEditor = () => {
     // Actualizar solo el logo
     const updatedImages = {
       ...currentImages,
-      logo: logoUrl
+      companyLogo: logoUrl
     };
     
     // Guardar en localStorage
@@ -116,8 +116,8 @@ const LogoEditor = () => {
 
   // Restablecer a valor original
   const resetLogo = () => {
-    setLogoUrl(defaultSiteImages.logo);
-    setPreviewUrl(defaultSiteImages.logo);
+    setLogoUrl(defaultSiteImages.companyLogo);
+    setPreviewUrl(defaultSiteImages.companyLogo);
     toast({
       title: "Logo restablecido",
       description: "Se ha restaurado el logo original",
@@ -159,7 +159,7 @@ const LogoEditor = () => {
                   <ImageManager
                     src={previewUrl}
                     alt="Logo Preview"
-                    className="h-12 w-auto"
+                    className="h-18 w-auto" /* Increased size by 50% from h-12 to h-18 */
                   />
                   <span className="ml-3 text-xl font-semibold text-gray-800">Smart Room</span>
                 </div>
@@ -170,7 +170,7 @@ const LogoEditor = () => {
                   <ImageManager
                     src={previewUrl}
                     alt="Logo Preview"
-                    className="h-10 w-auto"
+                    className="h-15 w-auto" /* Increased size by 50% from h-10 to h-15 */
                   />
                   <span className="ml-3 text-lg font-medium text-white">Smart Room</span>
                 </div>

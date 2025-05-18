@@ -76,7 +76,7 @@ const Navbar = () => {
           <img 
             src={siteImages.companyLogo} 
             alt="Adirem Logo" 
-            className="h-10 w-auto mr-3" 
+            className="h-15 w-auto mr-3" /* Increased size by 50% from h-10 to h-15 */
           />
           <span className="text-lg font-semibold text-gray-800">Adirem</span>
         </Link>
@@ -143,7 +143,7 @@ const Navbar = () => {
                 <img 
                   src={siteImages.companyLogo} 
                   alt="Adirem Logo" 
-                  className="h-8 w-auto mr-3" 
+                  className="h-12 w-auto mr-3" /* Increased size by 50% from h-8 to h-12 */
                 />
                 <span className="text-lg font-semibold">Adirem</span>
               </div>

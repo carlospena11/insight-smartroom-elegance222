@@ -24,7 +24,7 @@
 }
 
 .logo-image {
-  height: 48px; /* Increased logo size */
+  height: 72px; /* Increased logo size by 50% from 48px to 72px */
   width: auto;
   margin-right: 12px; /* Increased margin */
 }
@@ -100,7 +100,7 @@
 /* Responsive adjustments for logo area */
 @media (max-width: 768px) {
   .logo-image {
-    height: 40px; /* Slightly smaller on mobile but still larger than before */
+    height: 60px; /* Increased size by 50% from 40px to 60px for mobile */
   }
   
   .company-name {

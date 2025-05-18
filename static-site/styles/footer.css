@@ -23,7 +23,7 @@
 }
 
 .footer-logo-image {
-  height: 40px; /* Increased logo size */
+  height: 60px; /* Increased logo size by 50% from 40px to 60px */
   width: auto;
 }
 
