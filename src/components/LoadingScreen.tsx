@@ -1,5 +1,6 @@
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { ImageManager, siteImages } from "./ImageManager";
 
 const LoadingScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -18,16 +19,17 @@ const LoadingScreen = () => {
   return (
     <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
       <div className="flex flex-col items-center">
-        <div className="text-4xl font-semibold mb-6">
-          <span className="text-insight-dark">&lt;</span>
-          <span className="text-insight-dark">insight</span>
-          <span className="text-insight-red">.</span>
-          <span className="text-insight-green">/&gt;</span>
+        <div className="mb-6">
+          <img 
+            src={siteImages.logo} 
+            alt="Adirem Logo" 
+            className="h-16 w-auto"
+          />
         </div>
         
         <div className="relative w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div className="absolute top-0 left-0 h-full bg-insight-green rounded-full animate-pulse"></div>
-          <div className="absolute top-0 left-0 h-full w-1/3 bg-insight-green rounded-full animate-[loader_2s_linear_infinite]"></div>
+          <div className="absolute top-0 left-0 h-full bg-adirem-green rounded-full animate-pulse"></div>
+          <div className="absolute top-0 left-0 h-full w-1/3 bg-adirem-green rounded-full animate-[loader_2s_linear_infinite]"></div>
         </div>
       </div>
     </div>
