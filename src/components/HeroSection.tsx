@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Zap, Star } from "lucide-react";
 import { useRef } from "react";
@@ -41,18 +40,34 @@ const HeroSection = () => {
     }
   };
 
-  const buttonVariants = {
-    rest: { scale: 1 },
+  const buttonPrimaryVariants = {
+    rest: { scale: 1, y: 0 },
     hover: { 
-      scale: 1.05,
-      boxShadow: "0 10px 20px rgba(140, 209, 79, 0.3)",
+      scale: 1.02,
+      y: -4,
+      boxShadow: "0 8px 16px rgba(140, 209, 79, 0.3)",
       transition: { 
         type: "spring", 
         stiffness: 400, 
         damping: 10 
       }
     },
-    tap: { scale: 0.95 }
+    tap: { scale: 0.98, y: 0 }
+  };
+
+  const buttonOutlineVariants = {
+    rest: { scale: 1, y: 0 },
+    hover: { 
+      scale: 1.02,
+      y: -4,
+      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+      transition: { 
+        type: "spring", 
+        stiffness: 400, 
+        damping: 10 
+      }
+    },
+    tap: { scale: 0.98, y: 0 }
   };
 
   return (
@@ -164,8 +179,8 @@ const HeroSection = () => {
             >
               <motion.a 
                 href="#servicios" 
-                className="group px-6 py-3 bg-adirem-green text-white font-semibold rounded-md transition-all shadow-md relative overflow-hidden"
-                variants={buttonVariants}
+                className="group px-6 py-3 bg-adirem-green text-white font-semibold rounded-md shadow-md flex items-center justify-center"
+                variants={buttonPrimaryVariants}
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
@@ -185,7 +200,7 @@ const HeroSection = () => {
                   </motion.span>
                 </span>
                 <motion.span 
-                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"
+                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity rounded-md"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "100%" }}
                   transition={{ duration: 0.7 }}
@@ -194,8 +209,8 @@ const HeroSection = () => {
               
               <motion.a 
                 href="#contacto" 
-                className="px-6 py-3 bg-adirem-green text-white font-semibold rounded-md border border-adirem-green hover:bg-adirem-green/90 transition-all flex items-center justify-center"
-                variants={buttonVariants}
+                className="px-6 py-3 bg-transparent text-gray-800 font-semibold rounded-md border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-colors flex items-center justify-center"
+                variants={buttonOutlineVariants}
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"

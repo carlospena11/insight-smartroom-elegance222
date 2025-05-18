@@ -62,3 +62,37 @@
   background-color: #7bc045;
   color: var(--color-white);
 }
+
+.button-primary {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(140, 209, 79, 0.25);
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #7bc045;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(140, 209, 79, 0.35);
+}
+
+.button-outline {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.button-outline:hover {
+  background-color: var(--color-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
