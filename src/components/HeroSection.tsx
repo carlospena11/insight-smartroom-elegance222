@@ -14,7 +14,7 @@ const HeroSection = () => {
   // Transform values for parallax effect
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.5]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   // Staggered animation variants
   const containerVariants = {
@@ -194,7 +194,7 @@ const HeroSection = () => {
               
               <motion.a 
                 href="#contacto" 
-                className="px-6 py-3 bg-white text-adirem-dark font-semibold rounded-md border border-adirem-dark hover:bg-adirem-dark hover:text-white transition-all flex items-center justify-center"
+                className="px-6 py-3 bg-adirem-green text-white font-semibold rounded-md border border-adirem-green hover:bg-adirem-green/90 transition-all flex items-center justify-center"
                 variants={buttonVariants}
                 initial="rest"
                 whileHover="hover"
