@@ -74,8 +74,8 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img 
-            src="/lovable-uploads/84016e1b-263c-4f00-aae5-a2662e1d3d11.png" 
-            alt="SmartRoom Logo" 
+            src={siteImages.companyLogo} 
+            alt="Adirem Logo" 
             className="h-10 w-auto mr-3" 
           />
           <span className="text-lg font-semibold text-gray-800">Adirem</span>
@@ -141,8 +141,8 @@ const Navbar = () => {
             <nav className="flex flex-col gap-4 mt-12">
               <div className="flex items-center mb-6">
                 <img 
-                  src="/lovable-uploads/84016e1b-263c-4f00-aae5-a2662e1d3d11.png" 
-                  alt="SmartRoom Logo" 
+                  src={siteImages.companyLogo} 
+                  alt="Adirem Logo" 
                   className="h-8 w-auto mr-3" 
                 />
                 <span className="text-lg font-semibold">Adirem</span>

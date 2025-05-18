@@ -20,17 +20,17 @@
 .logo {
   display: flex;
   align-items: center;
-  margin-right: 2rem; /* Added more space to the right of the logo */
+  margin-right: 3rem; /* Increased space to the right of the logo */
 }
 
 .logo-image {
-  height: 40px; /* Increased logo size */
+  height: 48px; /* Increased logo size */
   width: auto;
-  margin-right: 10px;
+  margin-right: 12px; /* Increased margin */
 }
 
 .company-name {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: 600;
   color: var(--color-dark);
 }
@@ -100,10 +100,10 @@
 /* Responsive adjustments for logo area */
 @media (max-width: 768px) {
   .logo-image {
-    height: 36px; /* Slightly smaller on mobile but still larger than before */
+    height: 40px; /* Slightly smaller on mobile but still larger than before */
   }
   
   .company-name {
-    font-size: 1.1rem;
+    font-size: 1.3rem; /* Increased font size for mobile */
   }
 }

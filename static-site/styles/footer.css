@@ -19,11 +19,11 @@
   color: var(--color-white);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px; /* Increased gap */
 }
 
 .footer-logo-image {
-  height: 30px;
+  height: 40px; /* Increased logo size */
   width: auto;
 }
 
