@@ -1,3 +1,4 @@
+
 import { Monitor, Smartphone, Tv, Cast, QrCode, Info, BarChart4 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -95,7 +96,7 @@ const FeaturesSection = () => {
                 </p>
                 <a 
                   href="#contacto" 
-                  className="inline-block px-6 py-3 bg-insight-green text-white font-semibold rounded-md hover:bg-opacity-90 transition-all"
+                  className="inline-block px-6 py-3 bg-[#9b87f5] hover:bg-[#7E69AB] text-white font-semibold rounded-md transition-all duration-300 hover:shadow-lg"
                 >
                   Solicitar información
                 </a>
