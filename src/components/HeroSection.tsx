@@ -55,12 +55,12 @@ const HeroSection = () => {
     tap: { scale: 0.98, y: 0 }
   };
 
-  const buttonOutlineVariants = {
+  const buttonSecondaryVariants = {
     rest: { scale: 1, y: 0 },
     hover: { 
       scale: 1.02,
       y: -4,
-      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 8px 16px rgba(26, 31, 44, 0.2)",
       transition: { 
         type: "spring", 
         stiffness: 400, 
@@ -209,8 +209,8 @@ const HeroSection = () => {
               
               <motion.a 
                 href="#contacto" 
-                className="px-6 py-3 bg-transparent text-gray-800 font-semibold rounded-md border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-colors flex items-center justify-center"
-                variants={buttonOutlineVariants}
+                className="px-6 py-3 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-900 transition-colors flex items-center justify-center"
+                variants={buttonSecondaryVariants}
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
