@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -75,9 +76,8 @@ const Navbar = () => {
           <ImageManager
             src={siteImages.logo}
             alt="Smart Room Logo"
-            className="h-auto w-auto" 
-            width="65%"
-            maxHeight="40px"
+            className="h-auto w-auto max-h-[40px]" 
+            style={{ width: "65%" }}  // Using style prop instead of width attribute
           />
         </Link>
 
