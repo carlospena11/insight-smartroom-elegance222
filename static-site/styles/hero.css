@@ -40,12 +40,6 @@
   position: relative;
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-}
-
 .feature-badge {
   position: absolute;
   bottom: 20px;

@@ -5,7 +5,6 @@ type ImageProps = {
   src: string;
   alt: string;
   className?: string;
-  width?: string;
   fallbackSrc?: string;
 }
 
@@ -13,7 +12,7 @@ type ImageProps = {
  * Componente para gestionar imágenes con fallback y carga optimizada
  * Útil para cambiar imágenes fácilmente en todo el sitio
  */
-export const ImageManager = ({ src, alt, className, width, fallbackSrc = "/placeholder.svg" }: ImageProps) => {
+export const ImageManager = ({ src, alt, className, fallbackSrc = "/placeholder.svg" }: ImageProps) => {
   const [imgSrc, setImgSrc] = useState<string>(src);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
@@ -46,10 +45,9 @@ export const ImageManager = ({ src, alt, className, width, fallbackSrc = "/place
         src={imgSrc}
         alt={alt}
         className={className}
-        style={width ? { width } : undefined}
         onLoad={handleImageLoad}
         onError={handleImageError}
-        loading="lazy"
+        style={{ opacity: isLoading ? 0 : 1 }}
       />
       {hasError && (
         <div className="absolute bottom-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
@@ -99,7 +97,7 @@ export const defaultSiteImages = {
   guestExperience: "/lovable-uploads/4827b0f3-267c-4c28-b450-53935fa9aeca.png",
   smartRoom: "/lovable-uploads/d910afa8-d8a5-4cee-83d3-4cd37e6a3997.png",
   compatibility: "/lovable-uploads/27a90f52-eb00-4ffd-baf1-e4fe55ae9d2a.png",
-  logo: "/lovable-uploads/6c1308e9-e397-458a-80e4-bfab0f2e17c7.png",
+  logo: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
   aboutUs: "/lovable-uploads/1eaa6c24-f8b6-43b8-bcdd-0ceab0cfd71a.png",
   // Adding numbered compatibility logos
   compatibilityLogo1: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",

@@ -71,12 +71,12 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
-            alt="Smart Room Logo"
-            className="h-auto w-auto max-h-[44px]" 
-            width="71.5%"
+            alt="Insight Smart Hotel Logo"
+            className="h-8 w-auto"
           />
         </Link>
 
@@ -88,7 +88,7 @@ const Navbar = () => {
             </Link>
           ))}
           
-          {/* Admin panel access icon */}
+          {/* Icono de acceso al panel de administración */}
           <Button 
             variant="outline" 
             size="sm" 
@@ -99,7 +99,7 @@ const Navbar = () => {
             <span className="hidden xl:inline">Administración</span>
           </Button>
           
-          {/* Login/Logout button - Only show if authenticated */}
+          {/* Botón Login/Logout - Solo mostrar si está autenticado */}
           {isAuthenticated && (
             <Button 
               variant="ghost" 
@@ -146,7 +146,7 @@ const Navbar = () => {
                 </SheetClose>
               ))}
               
-              {/* Admin link in mobile menu */}
+              {/* Enlace al panel de administración en menú móvil */}
               <SheetClose asChild>
                 <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
                   <Wrench size={20} />
@@ -154,7 +154,7 @@ const Navbar = () => {
                 </Link>
               </SheetClose>
               
-              {/* Logout button in mobile menu - Only show if authenticated */}
+              {/* Botón Logout en menú móvil - Solo mostrar si está autenticado */}
               {isAuthenticated && (
                 <SheetClose asChild>
                   <button 
