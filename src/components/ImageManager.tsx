@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 type ImageProps = {
@@ -106,6 +105,7 @@ export const defaultSiteImages = {
   compatibilityLogo4: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
   compatibilityLogo5: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
   compatibilityLogo6: "/lovable-uploads/305d1918-687d-49de-87c7-9c047174a823.png",
+  smartRoomLogo: "/lovable-uploads/4e05bd4d-c863-47c3-98a2-4459683c8d14.png",
 };
 
 // Función para cargar imágenes desde localStorage si existen

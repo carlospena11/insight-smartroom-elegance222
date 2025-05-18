@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Zap, Star } from "lucide-react";
 import { useRef } from "react";
+import { ImageManager } from "./ImageManager";
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -127,8 +128,12 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-adirem-dark mb-4"
               variants={itemVariants}
             >
-              Soluciones <span className="text-adirem-green relative">
-                SmartRoom
+              Soluciones <span className="text-adirem-green relative inline-flex items-center">
+                <img 
+                  src="/lovable-uploads/4e05bd4d-c863-47c3-98a2-4459683c8d14.png" 
+                  alt="SmartRoom Logo" 
+                  className="h-10 md:h-12 lg:h-14 inline-block align-middle"
+                />
                 <motion.span 
                   className="absolute -top-6 -right-8 text-yellow-400"
                   animate={{ 
