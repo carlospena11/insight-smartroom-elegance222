@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Asegurarse de que el elemento root existe
+// Make sure we use createRoot for React 18
 const rootElement = document.getElementById('root');
 if (rootElement) {
   createRoot(rootElement).render(<App />);
