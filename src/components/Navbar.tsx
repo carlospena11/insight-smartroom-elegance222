@@ -75,7 +75,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
-            alt="Insight Smart Hotel Logo"
+            alt="Smart Room Logo"
             className="h-8 w-auto"
           />
         </Link>

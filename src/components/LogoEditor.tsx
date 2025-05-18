@@ -161,7 +161,7 @@ const LogoEditor = () => {
                     alt="Logo Preview"
                     className="h-12 w-auto"
                   />
-                  <span className="ml-3 text-xl font-semibold text-gray-800">Insight Smart Hotel</span>
+                  <span className="ml-3 text-xl font-semibold text-gray-800">Smart Room</span>
                 </div>
               </div>
               
@@ -172,7 +172,7 @@ const LogoEditor = () => {
                     alt="Logo Preview"
                     className="h-10 w-auto"
                   />
-                  <span className="ml-3 text-lg font-medium text-white">Insight Smart Hotel</span>
+                  <span className="ml-3 text-lg font-medium text-white">Smart Room</span>
                 </div>
               </div>
             </CardContent>
