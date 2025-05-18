@@ -51,27 +51,3 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
-
-/* Product logo styling */
-.product-logo-container {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.product-logo {
-  max-height: 60px;
-  max-width: 200px;
-  width: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .product-logo {
-    max-height: 40px;
-  }
-  
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-}
