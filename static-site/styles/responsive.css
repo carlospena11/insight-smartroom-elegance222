@@ -8,6 +8,10 @@
   .mobile-menu-toggle {
     display: block;
   }
+  
+  .logo img {
+    max-height: 40px;
+  }
 }
 
 /* Hero section responsive styles */
@@ -49,5 +53,10 @@
 @media (max-width: 576px) {
   .footer-content {
     grid-template-columns: 1fr;
+  }
+  
+  .footer-logo img {
+    max-width: 160px;
+    margin: 0 auto 1rem;
   }
 }

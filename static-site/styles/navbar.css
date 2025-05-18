@@ -1,3 +1,4 @@
+
 .navbar {
   position: fixed;
   top: 0;
@@ -28,8 +29,9 @@
 
 .logo img {
   height: auto;
-  width: 71.5%; /* Increased by 10% from 65% to 71.5% */
-  max-height: 55px; /* Increased max-height for larger logo */
+  width: 71.5%;
+  max-height: 55px;
+  object-fit: contain;
 }
 
 .desktop-nav {

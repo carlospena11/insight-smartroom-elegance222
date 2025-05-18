@@ -1,3 +1,4 @@
+
 .footer {
   background-color: var(--color-dark);
   color: rgba(255, 255, 255, 0.8);
@@ -19,9 +20,10 @@
 }
 
 .footer-logo img {
-  width: 71.5%; /* Increased by 10% from 65% to 71.5% */
+  width: 71.5%;
   height: auto;
-  max-width: 198px; /* Increased max-width by 10% from 180px */
+  max-width: 198px;
+  object-fit: contain;
 }
 
 .footer-social {

@@ -72,11 +72,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <div className="text-2xl font-semibold mb-4">
-              <span className="text-white">&lt;</span>
-              <span className="text-white">insight</span>
-              <span className="text-insight-red">.</span>
-              <span className="text-insight-green">/&gt;</span>
+            <div className="mb-4">
+              <ImageManager
+                src={siteImages.logo}
+                alt="Smart Room Logo"
+                className="h-auto max-w-[198px]"
+                width="71.5%"
+              />
             </div>
             <p className="text-gray-300 mb-4">
               Soluciones tecnológicas para el sector Hospitality.

@@ -71,13 +71,11 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo with increased size (10% larger than the previous 65%) */}
         <Link to="/" className="flex items-center">
           <ImageManager
             src={siteImages.logo}
             alt="Smart Room Logo"
             className="h-auto w-auto max-h-[44px]" 
-            // 65% + 10% = 71.5% (approximately)
             width="71.5%"
           />
         </Link>
@@ -90,7 +88,7 @@ const Navbar = () => {
             </Link>
           ))}
           
-          {/* Icono de acceso al panel de administración */}
+          {/* Admin panel access icon */}
           <Button 
             variant="outline" 
             size="sm" 
@@ -101,7 +99,7 @@ const Navbar = () => {
             <span className="hidden xl:inline">Administración</span>
           </Button>
           
-          {/* Botón Login/Logout - Solo mostrar si está autenticado */}
+          {/* Login/Logout button - Only show if authenticated */}
           {isAuthenticated && (
             <Button 
               variant="ghost" 
@@ -148,7 +146,7 @@ const Navbar = () => {
                 </SheetClose>
               ))}
               
-              {/* Enlace al panel de administración en menú móvil */}
+              {/* Admin link in mobile menu */}
               <SheetClose asChild>
                 <Link to="/admin/cms" className="flex items-center gap-3 py-2 px-4 rounded-md hover:bg-muted transition-colors">
                   <Wrench size={20} />
@@ -156,7 +154,7 @@ const Navbar = () => {
                 </Link>
               </SheetClose>
               
-              {/* Botón Logout en menú móvil - Solo mostrar si está autenticado */}
+              {/* Logout button in mobile menu - Only show if authenticated */}
               {isAuthenticated && (
                 <SheetClose asChild>
                   <button 
